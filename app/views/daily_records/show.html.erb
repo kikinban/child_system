@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Activities:</strong>
+  <%= @daily_record.activities %>
+</p>
+
+<p>
+  <strong>States:</strong>
+  <%= @daily_record.states %>
+</p>
+
+<p>
+  <strong>Information:</strong>
+  <%= @daily_record.information %>
+</p>
+
+<%= link_to 'Edit', edit_daily_record_path(@daily_record) %> |
+<%= link_to 'Back', daily_records_path %>

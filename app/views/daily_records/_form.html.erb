@@ -1,0 +1,118 @@
+<%= form_with(model: daily_record) do |form| %>
+  <% if daily_record.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(daily_record.errors.count, "error") %> prohibited this daily_record from being saved:</h2>
+
+      <ul>
+        <% daily_record.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  < class="field">
+    <%= form.label :activities, "本日の活動内容" %>
+    <%= form.text_area :activities %>
+  </div>
+  
+  <div class="overall">
+    <h2>お子様の体調・様子</h2>
+    <div id="all_radio">
+      <h3>体調</h3>
+      <div class="condition">
+      <%#= 有り無しの場所を揃える  %>
+        <div class="three_button" id="condition_style">
+            <%= form.radio_button :condition, :good %>
+            <%= form.label :condition_good, "良い" %>
+            <%= form.radio_button :condition, :somewhat_bad %>
+            <%= form.label :condition_somewhat_bad, "やや悪い" %>
+            <%= form.radio_button :condition, :bad %>
+            <%= form.label :condition_bad, "悪い" %>
+        </div>
+        <div id="hidden">
+          <p>理由:</p>
+          <%= form.select :condition, [["鼻水","鼻水"],["咳","咳"]] %>
+          <p>その他</p>
+          <%= form.text_area :condition %>
+        </div>
+        <%#= todo やや悪い・悪いボタンを押した時にテキストボックスが出てきて、理由を記述または選択できるようにする。  %>
+      </div>
+
+      <h3>食事</h3>
+      <p>◯朝おやつ◯</p>
+      <p>献立： キウイフルーツ・牛乳</p>
+      <div class="twe_button" id="morning_snack">
+          <%= form.radio_button :morning_snack, :complete %>
+          <%= form.label :morning_snack, "完食", {value: :complete} %>
+          <%= form.radio_button :morning_snack, :remaining %>
+          <%= form.label :morning_snack, "残食", {value: :remaining} %>
+      </div>
+      <p>◯昼食◯</p>
+      <p>献立： カレーライス・野菜の和え物・スープ</p>
+      <div class="twe_button" id="noon">
+          <%= form.radio_button :noon, :complete %>
+          <%= form.label :noon, "完食", {value: :complete} %>
+          <%= form.radio_button :noon, :remaining %>
+          <%= form.label :noon, "残食", {value: :complete} %>
+      </div>
+      <p>◯午後おやつ◯</p>
+      <p>献立： 黒糖クッキー・いりこ・牛乳</p>
+      <div class="twe_button" id="noon_snack">
+          <%= form.radio_button :noon_snack, :complete %>
+          <%= form.label :noon_snack, "完食", {value: :complete} %>
+          <%= form.radio_button :noon_snack, :remaining %>
+          <%= form.label :noon_snack, "残食", {value: :remaining} %>
+      </div>
+      <p>◯捕食◯</p>
+      <p>献立: みそおにぎり・オレンジ</p>
+      <div class="twe_button" id="night">
+          <%= form.radio_button :night, :complete %>
+          <%= form.label :night, "完食", {value: :complete} %>
+          <%= form.radio_button :night, :remaining %>
+          <%= form.label :night, "残食", {value: :remaining} %>
+      </div>
+
+      <h3>排便</h3>
+        <div class="twe_button" id="defecation">
+          <%= form.radio_button :defecation, :yes %>
+          <%= form.label :defecation, "有り", {value: :yes} %>
+          <%= form.radio_button :defecation, :none %>
+          <%= form.label :defecation, "無し", {value: :none} %>
+          <%#= todo 有りの場合は普通便・やや軟便・軟便・下痢  %>
+          <%#= todo 特記事項「下痢を選択した場合に、テキストボックス内に水様便または匂いが酸っぱいなど記入できたらいいな %>
+        </div>
+
+      <h3>薬</h3>
+        <div class="twe_button" id="medicine">
+          <%= form.radio_button :medicine, :yes %>
+          <%= form.label :medicine, "有り", {value: :yes} %>
+          <%= form.radio_button :medicine, :none %>
+          <%= form.label :medicine, "無し", {value: :none} %>
+        </div>
+
+      <h3>怪我</h3>
+      <div class= "twe_button" id="injury">
+        <%= form.label :injury, "無し" %>
+        <%= form.radio_button :injury, "無し", class: :none %>
+        <%= form.label :injury, "有り", class: :radio_border %>
+        <%= form.radio_button :injury, "有り", class: :none %>
+      </div>
+    </div>
+  </div>
+
+    <div class="field">
+    <%= form.label :states, "様子" %>
+    <%= form.text_area :states %>
+    </div>
+
+
+  <div class="field">
+    <%= form.label :information, "保護者様へ連絡事項" %>
+    <%= form.text_area :information %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

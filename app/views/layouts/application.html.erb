@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>child</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1"> <%# メディアサイズ %>
+    <%= csrf_meta_tags %> <%# 外部からの不正アクセスに対処する為のhtmlタグ %>
+    <%= csp_meta_tag %>  <%# 外部からの不正アクセスに対処する為のhtmlタグ %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    
+  </head>
+
+  <body>
+    <%= yield %>
+    <%= javascript_pack_tag 'form', 'data-turbolinks-track': 'reload' %>
+  </body>
+</html>
