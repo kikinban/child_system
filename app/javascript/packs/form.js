@@ -13,6 +13,7 @@ document.getElementById("daily_record_condition_good").addEventListener("click",
 //やや悪い
 document.getElementById("daily_record_condition_somewhat_bad").addEventListener("click", function(){
     document.getElementById("hidden").style.display = "block";
+    
 });
 
 //悪い
