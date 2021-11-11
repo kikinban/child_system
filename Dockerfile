@@ -17,7 +17,11 @@ RUN bundle install
 COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
 
+# 追加 webpacker
 RUN rails webpacker:install
+
+# 追加 jquery
+RUN yarn add jquery
 
 ENTRYPOINT ["sh","entrypoint.sh"]
 EXPOSE 3000
