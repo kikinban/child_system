@@ -11,7 +11,6 @@
     </div>
   <% end %>
 
-  < class="field">
     <%= form.label :activities, "本日の活動内容" %>
     <%= form.text_area :activities %>
   </div>
@@ -21,7 +20,6 @@
     <div id="all_radio">
       <h3>体調</h3>
       <div class="condition">
-      <%#= 有り無しの場所を揃える  %>
         <div class="three_button" id="condition_style">
             <%= form.radio_button :condition, :good %>
             <%= form.label :condition_good, "良い" %>
@@ -30,11 +28,39 @@
             <%= form.radio_button :condition, :bad %>
             <%= form.label :condition_bad, "悪い" %>
         </div>
+
+        <%#= やや悪い・悪いボタンを選択すると、詳細画面がスライドダウンする  %>
         <div id="hidden">
-          <p>理由:</p>
-          <%= form.select :condition, [["鼻水","鼻水"],["咳","咳"]] %>
-          <p>その他</p>
-          <%= form.text_area :condition %>
+          <%#= 複数選択  %>
+          <div id="detail">
+              <p>詳細</p>
+              <p>当てはまる体調にチェックを入れてください。（複数選択可能）</p>
+              <%= form.check_box :snot, {}, "true", "false" %>
+              <%= form.label :snot, "鼻水" %>
+              <%= form.check_box :cough, {}, "true", "false" %>
+              <%= form.label :cough, "咳" %>
+              <%= form.check_box :slight_fever, {}, "true", "false" %>
+              <%= form.label :slight_fever, "微熱" %>
+              <%= form.check_box :heat, {}, "true", "false" %>
+              <%= form.label :heat, "発熱" %>
+              <%= form.check_box :diarrhea, {}, "true", "false" %>
+              <%= form.label :diarrhea, "下痢" %>
+              <%= form.check_box :vomiting, {}, "true", "false" %>
+              <%= form.label :vomiting, "嘔吐" %>
+              <%= form.check_box :anorexia, {}, "true", "false" %>
+              <%= form.label :anorexia, "食欲不振" %>
+              <%= form.check_box :cold, {}, "true", "false" %>
+              <%= form.label :cold, "風邪" %>
+          </div>
+          <%#= 上記選択以外に追記やその他の事項があれば、入力出来るようにする。  %>
+          <div>
+            <p>追記・その他</p>
+            <ul>
+              <li>上記の選択内容に追記がある場合は、詳細を入力ください。</li>
+              <li>その他、体調面で連絡したいことがあれば入力ください。</li>
+            </ul>
+            <%= form.text_area :condition %>
+          </div>
         </div>
         <%#= todo やや悪い・悪いボタンを押した時にテキストボックスが出てきて、理由を記述または選択できるようにする。  %>
       </div>
