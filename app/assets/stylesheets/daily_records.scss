@@ -5,94 +5,89 @@
 // 管理者側：入力フォームページ
 
 // ----- ラジオボタン全体装飾 ------
-.condition {
-  position: relative;
-  .three_button {
-    margin: 0;
-    padding: 10px;
-    text-align: center;
-    display: flex;
+.three_button {
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+  display: flex;
 
-    // ラジオボタンの丸を消す
-    input {
-      display: none;
-    }
-
-    label {
-      padding: 10px 20px;
-      margin: 10px 0px;
-      background-color: #eeeeee;
-
-      // // 余分な線を消す
-      // &.radio_border {
-      //   border-left: none;
-      // }
-    }
-
-    label:first-of-type {
-      border-radius: 3px 0 0 3px;
-      border-right: solid 2px #e0e0e0;
-    }
-
-    label:last-of-type {
-      border-radius: 0 3px 3px 0;
-      border-left: solid 2px #e0e0e0;
-    }
-
-    input:checked + label {
-      background-color: #ff822e;
-      padding: 10px 20px;
-      margin: 10px 0px;
-      color: #fff;
-      font-weight: bold;
-    }
-
-    //todo 選択した後ろの背景に薄く丸・三角・バツを表示させたらより見やすいボタンになると思う。
+  // ラジオボタンの丸を消す
+  input {
+    display: none;
   }
 
-  #hidden {
-    position: absolute;
-    top: 70%;
-    
+  label {
+    padding: 10px 20px;
+    margin: 10px 0px;
+    background-color: #eeeeee;
+
+    // // 余分な線を消す
+    // &.radio_border {
+    //   border-left: none;
+    // }
   }
 
-  .twe_button {
-    margin: 0;
-    padding: 10px;
-    text-align: center;
-    display: flex;
+  label:first-of-type {
+    border-radius: 3px 0 0 3px;
+    border-right: solid 2px #e0e0e0;
+  }
 
-    // ラジオボタンの丸を消す
-    input {
-      display: none;
-    }
+  label:last-of-type {
+    border-radius: 0 3px 3px 0;
+    border-left: solid 2px #e0e0e0;
+  }
 
-    label {
-      padding: 10px 20px;
-      margin: 10px 0px;
-      background-color: #eeeeee;
+  input:checked + label {
+    background-color: #ff822e;
+    padding: 10px 20px;
+    margin: 10px 0px;
+    color: #fff;
+    font-weight: bold;
+  }
 
-      // // 余分な線を消す
-      // &.radio_border {
-      //   border-left: none;
-      // }
-    }
+  //todo 選択した後ろの背景に薄く丸・三角・バツを表示させたらより見やすいボタンになると思う。
+}
 
-    label:first-of-type {
-      border-radius: 3px 0 0 3px;
-      border-right: solid 2px #e0e0e0;
-    }
+#hidden {
+  display: none;
+}
 
-    label:last-of-type {
-      border-radius: 0 3px 3px 0;
-    }
+.twe_button {
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+  display: flex;
 
-    input:checked + label {
-      background-color: #ff822e;
-      padding: 10px 20px;
-      margin: 10px 0px;
-      color: #fff;
-      font-weight: bold;
-    }
+  // ラジオボタンの丸を消す
+  input {
+    display: none;
+  }
+
+  label {
+    padding: 10px 20px;
+    margin: 10px 0px;
+    background-color: #eeeeee;
+
+    // // 余分な線を消す
+    // &.radio_border {
+    //   border-left: none;
+    // }
+  }
+
+  label:first-of-type {
+    border-radius: 3px 0 0 3px;
+    border-right: solid 2px #e0e0e0;
+  }
+
+  label:last-of-type {
+    border-radius: 0 3px 3px 0;
+  }
+
+  input:checked + label {
+    background-color: #ff822e;
+    padding: 10px 20px;
+    margin: 10px 0px;
+    color: #fff;
+    font-weight: bold;
   }
 }
