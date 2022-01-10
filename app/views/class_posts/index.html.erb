@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>クラスの内容（一覧）</h1>
+<table>
+  <thead>
+    <tr>
+      <th>日付</th>
+      <th>記事タイトル</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @class_posts.each do |class_post| %>
+      <tr>
+        <td><%= class_post.created_at.to_date %></td>
+        <td><%= class_post.title %></td>
+        <td><%= link_to '見る', class_post %></td>
+        <td><%= link_to 'Edit', edit_class_post_path(class_post) %></td>
+        <td><%= link_to 'Destroy', class_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<br>
+
+<%= link_to 'New Class Post', new_class_post_path %>

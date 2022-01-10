@@ -1,0 +1,2 @@
+class ParentForm < ApplicationRecord
+end

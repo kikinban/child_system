@@ -1,0 +1,173 @@
+// Place all the styles related to the parents_notes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+// ----------------- フォーム画面装飾 -----------------
+
+// ※.three_button,.twe_buttonの装飾記載はdaily_records.scssにある ※
+
+// 体調・様子について
+#parents_notes {
+	display: flex;
+	flex-direction: column;
+
+	// 夕食メニュー枠サイズ
+	#parents_note_yesterday_dinner {
+		width: 300px;
+		height: 50px;
+		margin-top: 5px;
+	}
+	// 朝食メニュー枠サイズ
+	#parents_note_breakfast {
+		width: 300px;
+		height: 50px;
+		margin-top: 5px;
+	}
+}
+
+// 記入日余白
+#parent_note_date {
+	display: flex;
+	justify-content: center;
+	padding: 5px;
+}
+
+// 今朝の体温
+#body_temperature {
+	display: flex;
+	align-items: center;
+	margin: 5px 0;
+	label {
+		margin: 0px 5px 0px 0px;
+		border-left: solid 3px #fce38a;
+		display: inline-block;
+		padding: 0 5px;
+	}
+}
+
+// このページのh3タイトルcss
+.parent_title_h3 {
+	border-bottom: dashed 2px #fce38a;
+	padding: 5px;
+	margin: 10px 0px;
+}
+//h3タイトル下のp
+#parent_title_p {
+	margin-bottom: 5px;
+}
+
+// 食事例欄の枠
+#note_example {
+	padding: 10px 10px;
+	border: solid 1px gray;
+	border-radius: 4px;
+	padding-left: 10px;
+	margin: 0 auto;
+	width: 78%;
+}
+
+// 夕食メニュー
+#yesterday_menu {
+	text-align: left;
+	label {
+		margin-right: 5px;
+		margin: 0;
+		border-left: solid 3px #fce38a;
+		border-right: solid 3px #fce38a;
+		display: inline-block;
+		padding: 0 5px;
+	}
+	#parents_note_yesterday_dinner {
+		width: 100%;
+		height: 50px;
+		margin-top: 5px;
+	}
+}
+
+// 朝食メニュー
+#breakfast_menu {
+	text-align: left;
+	label {
+		margin-right: 5px;
+		margin: 0;
+		border-left: solid 3px #fce38a;
+		border-right: solid 3px #fce38a;
+		display: inline-block;
+		padding: 0 5px;
+	}
+	#parents_note_breakfast {
+		width: 100%;
+		height: 50px;
+		margin-top: 5px;
+	}
+}
+
+// 体調選択ボタン
+#condition_button {
+	display: flex;
+}
+
+// 家庭での様子の枠サイズ
+#parents_note_states {
+	width: 100%;
+	height: 200px;
+	margin-top: 5px;
+}
+
+// 保育者連絡事項欄、枠サイズ
+#parents_note_information {
+	width: 100%;
+	height: 50px;
+	margin-top: 5px;
+}
+
+// 降園について装飾
+#person_flex {
+	display: flex;
+	flex-wrap: wrap;
+	label {
+		border-left: solid 3px #fce38a;
+		display: inline-block;
+		padding: 0 5px;
+		margin: 5px 5px 5px 0px;
+	}
+}
+
+// 排便有りの場合に表示される（隠す）
+#stool_hidden {
+	display: none;
+	margin: 0px 14%;
+	width: 37%;
+	border: solid 1px #fce38a;
+	border-radius: 3px;
+	text-align: center;
+	padding: 5px;
+	flex-direction: column;
+}
+
+// 薬有りの場合に表示される（隠す）
+#medicine_hidden {
+	display: none;
+	border: solid 1px #fce38a;
+	border-radius: 3px;
+	width: 53%;
+	margin: 0 13%;
+	padding: 5px;
+	text-align: center;
+	// 薬の詳細テキストボックス
+	#parents_note_medicine_yes {
+		width: 95%;
+		height: 70px;
+		margin-top: 10px;
+	}
+}
+
+// フォーム投稿ボタン
+#parent_note_input {
+	margin: 10px 0px;
+	font-weight: bold;
+	width: 100%;
+	background-color: #fce38a;
+	border: solid 3px #fdd955;
+	border-radius: 5px;
+}

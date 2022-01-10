@@ -1,0 +1,35 @@
+<%= form_with(model: stamping,local: true) do |form| %>
+  <% if stamping.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(stamping.errors.count, "error") %> prohibited this stamping from being saved:</h2>
+
+      <ul>
+        <% stamping.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div id="time_nows">
+    <p id="time_now_p">打刻時刻</p>
+    <div id="time_now">
+      <%= image_tag "clock.png" %>
+      <div id="time_size"><%= Time.zone.now.strftime("%Y年%m月%d日 %H時%M分") %></div>
+      <%= image_tag "clock.png" %>
+    </div>
+  </div>
+  <div id="stamping_children_names">
+    <%= form.label :children_name, "お子様の名前:", id: :stamping_children_name %>
+    <%= form.text_field :children_name %>
+  </div>
+  <div id="stamping_times">
+    <%= form.radio_button :stamping_times, "登園" %>
+    <%= form.label :stamping_times, "登園", {value: "登園",id: :time_css} %>
+    <%= form.radio_button :stamping_times, "降園" %>
+    <%= form.label :stamping_times, "降園", {value: "降園",id: :time_css} %>
+  </div>
+  <div class="stamping_actions">
+    <%= form.submit value="打刻する" %>
+  </div>
+<% end %>

@@ -51,6 +51,16 @@ gem 'ruby-debug-ide'
 gem 'debase'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data'
 
 gem 'devise'
+
+# カレンダー機能を実装する為、追加 2021/12/9
+gem "simple_calendar", "~> 2.4"
+
+# 画像投稿システムの実装 追加 2021/12/19
+gem "carrierwave", "~> 1.0"
+
+# simple_calendarを日本語化する為に追加 2021/1/5
+gem 'rails-i18n', '~> 6.0.0' 
+

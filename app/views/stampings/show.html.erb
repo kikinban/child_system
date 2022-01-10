@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>登降園</strong>
+  <%= @stamping.stamping_times %>
+  <strong>打刻時間</strong>
+  <%= @stamping .created_at %>
+</p>
+
+<%= link_to 'Edit', edit_stamping_path(@stamping) %> |
+<%= link_to 'Back', stampings_path %>

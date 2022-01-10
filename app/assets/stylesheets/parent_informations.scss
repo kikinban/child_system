@@ -1,0 +1,112 @@
+// Place all the styles related to the parent_informations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+// ---------------------------------------------------------------
+//        （管理者側）保護者に対してのお知らせ・お願いフォーム
+// ---------------------------------------------------------------
+
+// 各divの余白や装飾指定
+.information_style {
+	display: flex;
+	align-items: center;
+	margin: 10px 0px;
+}
+// 内容のテキストボックスサイズ
+#parent_information_content {
+	width: 100%;
+	height: 150px;
+	margin-top: 5px;
+}
+// ラベルの右側に余白
+.information_label {
+	margin-right: 5px;
+}
+// 投稿するボタン装飾
+#information_action {
+	margin: 10px 0px;
+	font-weight: bold;
+	width: 100%;
+	background-color: #fce38a;
+	border: solid 3px #fdd955;
+	border-radius: 5px;
+}
+
+// ----------------------------------------------------------------
+//        （保護者側）お知らせ・お願い一覧 index
+// ---------------------------------------------------------------
+table {
+	border: solid 1px #fce38a;
+	margin: 0 auto;
+	th {
+		border: solid 1px #fce38a;
+		text-align: center;
+		padding: 5px;
+	}
+	td {
+		border: solid 1px #fce38a;
+		text-align: center;
+		padding: 5px;
+	}
+}
+
+// ----------------------------------------------------------------
+//        （保護者側）お知らせ・お願い詳細画面 show
+// ---------------------------------------------------------------
+
+// strong内容文字の下に余白
+#parent_information_p {
+	margin: 0;
+}
+// 内容のサイズ
+#parent_information_show {
+	width: 100%;
+	height: 100%;
+	margin: 5px 0px;
+}
+
+// ----------------------------------------------------------------
+//        （保護者側）お知らせ・お願い詳細画面 show
+// ---------------------------------------------------------------
+
+// タイトルp(h1すぐ下)
+#change_title {
+	text-align: center;
+}
+// 横並びにする
+.change_flex {
+	display: flex;
+	margin: 10px 0;
+}
+// ラベル右側に余白
+.change_label {
+	margin-right: 5px;
+}
+// 変更時間の右側余白
+#change_label_content {
+	margin: 0px 5px;
+}
+// 時間変更・送迎者の下線
+.change_border {
+	border-bottom: dashed 2px #fce38a;
+	padding: 5px 0;
+	margin: 10px 0px;
+}
+// 追記・特記事項
+#change_other {
+	margin: 10px 0;
+	#change_post_others {
+		width: 100%;
+		height: 100%;
+		margin-top: 5px;
+	}
+}
+// 送信ボタン
+#change_action {
+	margin: 10px 0px;
+	font-weight: bold;
+	width: 100%;
+	background-color: #fce38a;
+	border: solid 3px #fdd955;
+	border-radius: 5px;
+}

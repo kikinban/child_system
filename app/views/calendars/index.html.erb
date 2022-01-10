@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<div class="toppage">
+  <h1 class="top">行事予定</h1>
+  <div class="col-md-8">
+    <%# メモ：eventsはコントローラで設定したインスタンス変数を置くことでデータを引っ張ってきている  %>
+    <%= month_calendar events: @calendars do |date, calendars| %>
+      <%= date.day %>
+      <% calendars.each do |calendar| %>
+        <div id="calendar_hidden">
+          <%= link_to calendar.title, calendar %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+

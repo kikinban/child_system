@@ -1,5 +1,9 @@
 {
     "cSpell.words": [
         "backgroundcolor"
-    ]
+    ],
+    "scss.completion.triggerPropertyValueCompletion": false,
+    "css.completion.triggerPropertyValueCompletion": false,
+    "less.completion.triggerPropertyValueCompletion": false,
+    "emmet.triggerExpansionOnTab": true
 }

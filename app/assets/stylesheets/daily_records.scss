@@ -4,90 +4,206 @@
 
 // 管理者側：入力フォームページ
 
-// ----- ラジオボタン全体装飾 ------
+// ------------------------  ラジオボタン全体装飾 -------------------------
 .three_button {
-  margin: 0;
-  padding: 10px;
-  text-align: center;
-  display: flex;
+	margin: 0;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	.button_title {
+		width: 40px;
+		text-align: left;
+		margin: 0;
+		border-left: solid 3px #fce38a;
+		display: inline-block;
+		padding: 0 5px;
+	}
+	// ラジオボタンの丸を消す
+	input {
+		display: none;
+	}
+	// チェックした時の装飾
+	input:checked + label {
+		background-color: #95e1d3;
+	}
 
-  // ラジオボタンの丸を消す
-  input {
-    display: none;
-  }
+	label {
+		padding: 5px 20px;
+		margin: 10px 0px;
+		background-color: #eeeeee;
+	}
 
-  label {
-    padding: 10px 20px;
-    margin: 10px 0px;
-    background-color: #eeeeee;
+	label:first-of-type {
+		border-radius: 3px 0 0 3px;
+		border-right: solid 2px #e0e0e0;
+	}
 
-    // // 余分な線を消す
-    // &.radio_border {
-    //   border-left: none;
-    // }
-  }
-
-  label:first-of-type {
-    border-radius: 3px 0 0 3px;
-    border-right: solid 2px #e0e0e0;
-  }
-
-  label:last-of-type {
-    border-radius: 0 3px 3px 0;
-    border-left: solid 2px #e0e0e0;
-  }
-
-  input:checked + label {
-    background-color: #ff822e;
-    padding: 10px 20px;
-    margin: 10px 0px;
-    color: #fff;
-    font-weight: bold;
-  }
-
-  //todo 選択した後ろの背景に薄く丸・三角・バツを表示させたらより見やすいボタンになると思う。
+	label:last-of-type {
+		border-radius: 0 3px 3px 0;
+		border-left: solid 2px #e0e0e0;
+	}
 }
 
-#hidden {
-  display: none;
+// やや悪い・悪いボタンのチェックボックスを隠す
+#hidden_detail {
+	display: none;
+	//選択項目
+	#details {
+		border: solid 1px #fce38a;
+		text-align: center;
+		border-radius: 5px;
+		margin: 0px 13%;
+		#detail {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		// 項目ごとのデザイン
+		.detail_box {
+			display: flex;
+			justify-content: center;
+			border: dashed 2px #95e1d3;
+			border-radius: 3px;
+			margin: 5px 5px;
+			padding: 5px;
+			width: 80px;
+		}
+		// テキストボックス上文字
+		.condition_p {
+			margin: 0px 0px 5px 0px;
+			text-align: left;
+			padding: 0px 10px;
+		}
+		// タイトル文字
+		.details_title {
+			margin: 5px;
+			border-bottom: solid 3px #fce38a;
+		}
+		p {
+			margin: 0px;
+		}
+		// テキストボックスサイズ
+		#parents_note_condition {
+			width: 90%;
+			height: 100px;
+			margin-bottom: 10px;
+		}
+	}
+}
+
+// 怪我有りのテキストボックス隠す
+#injury_hidden {
+	display: none;
+	border: solid 1px #fce38a;
+	border-radius: 3px;
+	width: 81%;
+	margin: 0 13%;
+	padding: 5px;
+	text-align: center;
+	// 怪我の詳細テキストボックス
+	#daily_record_injury_hidden {
+		margin-top: 5px;
+		width: 95%;
+	}
+}
+
+// 食事の見出しp
+.meal_p {
+	margin: 0;
+	border-left: solid 3px #fce38a;
+	display: inline-block;
+	padding: 0 5px;
+}
+// ------------------- 朝おやつ ----------------------
+// 残食のテキストボックスを隠す
+#morning_hidden {
+	display: none;
+	border: solid 1px #fce38a;
+	border-radius: 3px;
+	width: 74%;
+	margin: 0 21%;
+	padding: 5px;
+	text-align: center;
+	// 残食の詳細テキストボックス
+	#daily_record_remaining_contents {
+		margin-top: 5px;
+		width: 95%;
+	}
+}
+
+// ------------------- 昼食 ----------------------
+#noon_hidden {
+	display: none;
+}
+
+// ------------------- 午後おやつ ----------------------
+#noon_snack_hidden {
+	display: none;
 }
 
 .twe_button {
-  margin: 0;
-  padding: 10px;
-  text-align: center;
-  display: flex;
+	margin: 0;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	.button_title {
+		width: 40px;
+		text-align: left;
+		margin: 0;
+		border-left: solid 3px #fce38a;
+		display: inline-block;
+		padding: 0 5px;
+	}
 
-  // ラジオボタンの丸を消す
-  input {
-    display: none;
-  }
+	// ラジオボタンの丸を消す
+	input {
+		display: none;
+	}
 
-  label {
-    padding: 10px 20px;
-    margin: 10px 0px;
-    background-color: #eeeeee;
+	// チェックした時の装飾
+	input:checked + label {
+		background-color: #95e1d3;
+	}
 
-    // // 余分な線を消す
-    // &.radio_border {
-    //   border-left: none;
-    // }
-  }
+	label {
+		padding: 5px 20px;
+		margin: 10px 0px;
+		background-color: #eeeeee;
 
-  label:first-of-type {
-    border-radius: 3px 0 0 3px;
-    border-right: solid 2px #e0e0e0;
-  }
+		// // 余分な線を消す
+		// &.radio_border {
+		//   border-left: none;
+		// }
+	}
 
-  label:last-of-type {
-    border-radius: 0 3px 3px 0;
-  }
+	label:first-of-type {
+		border-radius: 3px 0 0 3px;
+		border-right: solid 2px #e0e0e0;
+	}
 
-  input:checked + label {
-    background-color: #ff822e;
-    padding: 10px 20px;
-    margin: 10px 0px;
-    color: #fff;
-    font-weight: bold;
-  }
+	label:last-of-type {
+		border-radius: 0 3px 3px 0;
+	}
+}
+
+// 本日の様子のテキストボックス
+#daily_record_states {
+	width: 100%;
+	margin-top: 5px;
+}
+
+// 連絡事項のテキストボックス
+#daily_record_information {
+	width: 100%;
+	margin-top: 5px;
+}
+
+// 記録保存ボタン
+#daily_record_input {
+	margin: 10px 0px;
+	font-weight: bold;
+	width: 100%;
+	background-color: #fce38a;
+	border: solid 3px #fdd955;
+	border-radius: 5px;
 }

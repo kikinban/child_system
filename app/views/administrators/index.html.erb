@@ -1,0 +1,47 @@
+<body id="administrator_body">
+  <p id="notice"><%= notice %></p>
+  <div class="parent_links">
+    <%= link_to "保護者システム", parent_tops_path ,id: :parent_tops_system %>
+  </div>
+  <div class="h1_images">
+    <%= image_tag "administrator_image.png",id: :administrator_image %>
+    <h1 class="top_h1">こはた保育園 管理者画面</h1>
+    <%= image_tag "administrator_image.png", id: :administrator_image %>
+  </div>
+  <div id="new_arrival">
+    <p id="p_arrival">新着</p>
+    <div id="arrival">
+    </div>
+  </div>
+  <div id="administrator_lists">
+    <ul>
+      <li>
+        <%= link_to "打刻システム", stampings_path ,class: "administrator_list_title"%><br>
+        <p class="administrator_p">打刻時間の確認</p>
+      </li>
+      <li><%= link_to "変更届けシステム", change_posts_path ,class: "administrator_list_title"%><br>
+        <p class="administrator_p">変更内容確認</p>
+      </li>
+      <li><%= link_to "連絡ノート", daily_records_path, class: "administrator_list_title" %><br>
+        <p class="administrator_p">ノート確認・返信</p>
+      </li>
+      <li><%= link_to "クラスの様子", new_class_post_path, class: "administrator_list_title" %><br>
+        <p class="administrator_p">投稿機能</p>
+      </li>
+      <li><%= link_to "行事・クラス予定", new_calendar_path, class: "administrator_list_title" %><br>
+          <p class="administrator_p">日程調節・入力</p>
+      </li>
+      <li><%= link_to "取り組み", new_incorporate_path, class: "administrator_list_title" %><br>
+        <p class="administrator_p">投稿機能</p>
+      </li>
+      <li><%= link_to "お問い合わせ", parent_forms_path, class: "administrator_list_title" %><br>
+        <p class="administrator_p">詳細確認</p>
+      </li>
+      <li><%= link_to "お知らせ・お願い", new_parent_information_path, class: "administrator_list_title" %><br>
+        <p class="administrator_p">投稿機能</p>
+      </li>
+    </ul>
+  </div>
+
+  <%= link_to 'トップ', administrators_path %>
+</body>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>child</title>
+    <title>こはた保育園システム</title>
     <meta name="viewport" content="width=device-width,initial-scale=1"> <%# メディアサイズ %>
     <%= csrf_meta_tags %> <%# 外部からの不正アクセスに対処する為のhtmlタグ %>
     <%= csp_meta_tag %>  <%# 外部からの不正アクセスに対処する為のhtmlタグ %>
@@ -11,6 +11,11 @@
   </head>
 
   <body>
+    <div id="top_home">
+      <%= link_to parent_tops_path do %>
+        <%= image_tag "home.png"%>
+      <% end %>
+    </div>
     <%= yield %>
     <%= javascript_pack_tag 'form', 'data-turbolinks-track': 'reload' %>
   </body>

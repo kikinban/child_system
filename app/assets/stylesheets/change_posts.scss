@@ -1,0 +1,39 @@
+// Place all the styles related to the change_posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+// ------------------------------------------------------
+//        変更システム (入力：保護者) new
+// ------------------------------------------------------
+
+// ------------------ 詳細cssはdaily_records.scss -------------------
+
+// テキストボックス枠が一部見えなくなっていたのを解消
+.change_flex {
+	padding: 2px;
+
+	label {
+		text-align: left;
+		margin: 0;
+		border-left: solid 3px #fce38a;
+		display: inline-block;
+		padding: 0 5px;
+	}
+}
+
+// タイトル下線
+#change_other {
+	.change_label {
+		border-bottom: dashed 2px #fce38a;
+		padding: 5px 0;
+		margin: 10px 0px;
+	}
+}
+
+// ------------------------------------------------------
+//         show 管理者画面
+// ------------------------------------------------------
+
+#change_posts_show {
+	text-align: left;
+}

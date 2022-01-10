@@ -1,0 +1,2 @@
+class ParentTop < ApplicationRecord
+end

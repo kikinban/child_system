@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2022-01-08
+  time: 2022-01-08 14:30:05
+  person: MyString
+  others: MyText
+
+two:
+  date: 2022-01-08
+  time: 2022-01-08 14:30:05
+  person: MyString
+  others: MyText

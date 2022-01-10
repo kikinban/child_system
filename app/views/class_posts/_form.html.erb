@@ -1,0 +1,72 @@
+<%= form_with(model: class_post) do |form| %>
+  <% if class_post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(class_post.errors.count, "error") %> prohibited this class_post from being saved:</h2>
+      <ul>
+        <% class_post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div id="post_images">
+    <%#= 画像1を投稿 %>
+    <div class="post_image_1" id="image_center">
+      <p class="p_image_1">1枚目の写真<br>
+      ＜プレビュー画面＞<br>
+      下記ボタンから写真を選択してください
+      </p>
+      <%# プレビュー画像の表示 %>
+      <% if class_post.image_1.present? %>
+        <%= image_tag class_post.image_1, id: :preview_1 %>
+        <% else %>
+        <%= image_tag "preview_sample.png", id: :preview_1 %>
+      <% end %>
+      <%= form.label :image_1 %>
+      <%= form.file_field :image_1 %>
+    </div>
+    <%#= 画像2を投稿 %>
+    <div class="post_image_2" id="image_center">
+      <p class="p_image_2">2枚目の写真<br>
+      ＜プレビュー画面＞<br>
+      下記ボタンから写真を選択してください
+      </p>
+      <%# プレビュー画像の表示 %>
+      <% if class_post.image_2.present? %>
+        <%= image_tag class_post.image_2, id: :preview_2 %>
+        <% else %>
+        <%= image_tag "preview_sample.png", id: :preview_2 %>
+      <% end %>
+      <%= form.label :image_2 %>
+      <%= form.file_field :image_2 %>
+    </div>
+    <%#= 画像3を投稿 %>
+    <div class="post_image_3" id="image_center">
+      <p class="p_image_3">3枚目の写真<br>
+      ＜プレビュー画面＞<br>
+      下記ボタンから写真を選択してください
+      </p>
+      <%# プレビュー画像の表示 %>
+      <% if class_post.image_3.present? %>
+        <%= image_tag class_post.image_3, id: :preview_3 %>
+        <% else %>
+        <%= image_tag "preview_sample.png", id: :preview_3 %>
+      <% end %>
+      <%= form.label :image_3 %>
+      <%= form.file_field :image_3 %>
+    </div>
+  </div>
+  <div id="class_post_title">
+    <%= form.label :title , "タイトル:" %>
+    <%= form.text_field :title %>
+  </div>
+  <div id="class_post_content">
+    <%= form.label :content ,"クラスの様子" %>
+    <%= form.text_area :content %>
+  </div>
+  <div id="class_post_actions">
+    <%= form.submit value: "記録する" %>
+  </div>
+<% end %>

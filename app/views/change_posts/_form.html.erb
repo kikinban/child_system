@@ -1,0 +1,52 @@
+<%= form_with(model: change_post) do |form| %>
+  <% if change_post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(change_post.errors.count, "error") %> prohibited this change_post from being saved:</h2>
+
+      <ul>
+        <% change_post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div id="change_children" class="change_flex">
+    <%= form.label :children_name, "お子様の名前:", class: :change_label %>
+    <%= form.text_field :children_name %>
+  </div>
+  <div id="change_items" class="change_flex">
+    <%= form.label :change_item, "変更項目:", class: :change_label %>
+    <%= form.select :change_item , [["時間変更","時間変更"],["欠席","欠席"],["送迎者変更","送迎者変更"]]%>
+  </div>
+  <div id="change_date" class="change_flex">
+    <%= form.label :date, "日付:", class: :change_label %>
+    <%= raw sprintf(form.date_select(:date,use_month_numbers:true,date_separator: "%s"), "年","月")+"日" %>
+  </div>
+
+  <div id="change_contents">
+    <p class="change_border">時間変更</p>
+    <div class="change_flex">
+      <% form.label :change_content %>
+      <%= form.select :change_content , [["登園","登園"],["降園","降園"]]%><br>
+      <%= form.label :time, "変更時間:", id: :change_label_content %>
+      <%= form.time_select :time %>
+    </div>
+  </div>
+
+  <div id="change_person">
+    <p class="change_border">送迎者変更</p>
+    <div class="change_flex">
+      <%= form.label :person, "送迎者名:", class: :change_label %>
+      <%= form.text_field :person %>
+    </div>
+  </div>
+
+  <div id="change_other">
+    <%= form.label :others, "追記・特記事項あれば入力ください", class: :change_label %>
+    <%= form.text_area :others %>
+  </div>
+
+  <div id="change_actions">
+    <%= form.submit "送信する" ,id: :change_action %>
+  </div>
+<% end %>

@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<h1>詳細</h1>
+<div class="calendar_time" >
+  <strong>日付:</strong>
+  <%= @calendar.start_time.strftime("%Y年%m月%d日") %>
+</div>
+<div class="calendar_title">
+  <strong>行事名:</strong>
+  <%= @calendar.title %>
+</div>
+<div class="calendar_content_show">
+  <strong>詳細</strong><br>
+  <%= @calendar.content %>
+</div>
+
+
+

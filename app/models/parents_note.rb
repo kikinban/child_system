@@ -1,0 +1,2 @@
+class ParentsNote < ApplicationRecord
+end

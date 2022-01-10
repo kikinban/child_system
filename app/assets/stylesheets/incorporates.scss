@@ -1,0 +1,27 @@
+// Place all the styles related to the incorporates controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+// ---------------------------------------------------------------
+//        （管理者側）取り組みページ 投稿画面
+// ---------------------------------------------------------------
+
+// 項目を横並びにする
+.incorporate_flex {
+	display: flex;
+	margin: 10px 0;
+}
+// 内容のテキストボックス上余白
+#incorporate_content {
+	margin-top: 5px;
+}
+
+.incorpoate_label {
+	margin-right: 5px;
+}
+// 投稿画像pの下線
+#incorporate_images {
+	border-bottom: dashed 2px #fce38a;
+	padding: 5px 0;
+	margin: 10px 0px;
+}

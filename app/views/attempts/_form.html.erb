@@ -1,0 +1,31 @@
+<%= form_with(model: attempt) do |form| %>
+  <% if attempt.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(attempt.errors.count, "error") %> prohibited this attempt from being saved:</h2>
+
+      <ul>
+        <% attempt.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div id="attempt_images">
+    <p>画像を選択してください</p>
+  </div>
+  <%# todo 更新する日付を打つことが出来るようにしたい  %>
+  <div id="attempt_down">
+    <%= form.label :attempt_down, "投稿内容を選択してください" %>
+    <%= form.select :attempt_down, [["行事","行事"],["取り組み","取り組み"]] %>
+  </div>
+  <div class="attempt_content">
+    <%= form.label :attempt_content, "投稿したい内容" %>
+    <%= form.text_area :attempt_content %>
+  </div>
+  <div class="actions">
+    <%= form.submit value="投稿を保存する" %>
+  </div>
+
+
+<% end %>

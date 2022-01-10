@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>お知らせ・お願い</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>投稿日</th>
+      <th>タイトル</th>
+      <th>内容</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @parent_informations.each do |parent_information| %>
+      <tr>
+        <td><%= parent_information.date %></td>
+        <td><%= parent_information.title %></td>
+        <td><%= link_to '確認する', parent_information %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+

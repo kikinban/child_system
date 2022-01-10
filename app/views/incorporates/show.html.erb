@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+<h1>取り組み</h1>
+<p>
+  <strong>投稿日:</strong>
+  <%= @incorporate.date %>
+</p>
+
+<p>
+  <strong>タイトル:</strong>
+  <%= @incorporate.title %>
+</p>
+
+<p>
+  <strong>内容:</strong>
+  <%= @incorporate.content %>
+</p>
+<div>
+    <%= image_tag @incorporate.image_1.url %>
+    <%= image_tag @incorporate.image_2.url %>
+</div>
+<%= link_to 'Edit', edit_incorporate_path(@incorporate) %> |
+<%= link_to 'Back', incorporates_path %>

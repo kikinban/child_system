@@ -1,0 +1,50 @@
+// Place all the styles related to the administrators controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+#administrator_body {
+	background-color: #eaeaea;
+	.h1_images {
+		margin: 20px 0px;
+		display: flex;
+		justify-content: center;
+	}
+	.top_h1 {
+		margin: 0;
+		background-image: none;
+	}
+	#administrator_image {
+		width: 18px;
+		height: 18px;
+		margin: 5px 10px;
+	}
+	#administrator_lists {
+		ul {
+			list-style: none;
+			padding: 0;
+			text-align: center;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+
+			li {
+				margin: 5px;
+				border: solid 3px #08d9d6;
+				border-radius: 10px;
+				padding: 5px 10px;
+				width: 138px;
+				.administrator_p {
+					font-size: 10px;
+					margin: 0;
+				}
+
+				.administrator_list_title {
+					font-weight: bold;
+					text-decoration: none;
+					border-bottom: dashed 1px #ff2e63;
+					padding: 2px;
+				}
+			}
+		}
+	}
+}

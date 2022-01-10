@@ -1,0 +1,37 @@
+<%= form_with(model: parent_information) do |form| %>
+  <% if parent_information.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(parent_information.errors.count, "error") %> prohibited this parent_information from being saved:</h2>
+
+      <ul>
+        <% parent_information.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div id="information_date" class="information_style">
+    <%= form.label :date, "投稿日:", class: :information_label %>
+    <%= form.date_field :date %>
+  </div>
+
+  <div id="information_title" class="information_style">
+    <%= form.label :title, "タイトル:", class: :information_label %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div id="information_content">
+    <%= form.label :content, "内容" %>
+    <%= form.text_area :content %>
+  </div>
+
+  <div id="information_file" class="information_style">
+    <%= form.label :file_content, "参考ファイル:", class: :information_label %>
+    <%= form.file_field :file_content %>
+  </div>
+
+  <div class="information_actions">
+    <%= form.submit "投稿する" ,id: :information_action %>
+  </div>
+<% end %>

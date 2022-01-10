@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Parents Notes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @parents_notes.each do |parents_note| %>
+      <tr>
+        <td><%= parents_note.content %></td>
+        <td><%= link_to 'Show', parents_note %></td>
+        <td><%= link_to 'Edit', edit_parents_note_path(parents_note) %></td>
+        <td><%= link_to 'Destroy', parents_note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Parents Note', new_parents_note_path %>

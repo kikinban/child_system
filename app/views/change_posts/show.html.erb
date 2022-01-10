@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>変更内容</h1>
+<div id="change_posts_show">
+  <p>
+    <strong>日付変更:</strong>
+    <%= @change_post.date %>
+  </p>
+
+  <p>
+    <strong>時間変更:</strong>
+    <%= @change_post.time %>
+  </p>
+
+  <p>
+    <strong>送迎者変更:</strong>
+    <%= @change_post.person %>
+  </p>
+
+  <p>
+    <strong>その他・特記事項</strong><br>
+    <%= @change_post.others %>
+  </p>
+</div>
+

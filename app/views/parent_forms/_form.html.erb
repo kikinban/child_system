@@ -1,0 +1,38 @@
+<%= form_with(model: parent_form) do |form| %>
+  <% if parent_form.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(parent_form.errors.count, "error") %> prohibited this parent_form from being saved:</h2>
+
+      <ul>
+        <% parent_form.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div id="parent_forms_name">
+    <div id="parent_form_children_name">
+      <%= form.label :children_name ,"お子様の名前:", class: :parent_form_name_right %>
+      <%= form.text_field :children_name %>
+    </div>
+
+    <div id="parent_form_parent_name">
+      <%= form.label :parent_name ,"保護者様の名前:" , class: :parent_form_name_right %>
+      <%= form.text_field :parent_name %>
+    </div>
+
+    <div id="parent_form_content_name">
+      <%= form.label :content_name, "お問い合わせ項目:" , class: :parent_form_name_right  %>
+      <%= form.select :content_name, [["要望","要望"],["意見","意見"],["その他","その他"]] %>
+    </div>
+
+    <div id="parent_form_content">
+      <%= form.label :contents, "お問い合わせ内容", class: :parent_form_label%>
+      <%= form.text_area :contents %>
+    </div>
+  </div>
+
+    <div id="parent_form_actions">
+      <%= form.submit "送信する" , id: :parent_form_action %>
+    </div>
+<% end %>

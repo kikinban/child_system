@@ -1,0 +1,121 @@
+// Place all the styles related to the Stampings controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+// 管理者上部にそれぞれのリンクをつける
+// クラス名でデザイン調整
+.parent_links {
+	text-align: right;
+	padding: 5px;
+
+	a {
+		text-decoration: none;
+		padding: 5px;
+		border: solid 1px #333;
+		border-radius: 5px;
+	}
+}
+
+// ---------------------------------------------
+//       打刻システム new
+// ---------------------------------------------
+
+//  フォーム装飾
+#time_nows {
+	#time_now_p {
+		margin: 0;
+		text-align: center;
+	}
+	#time_now {
+		font-size: 17px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 5px;
+		border: solid 1px #fce38a;
+		border-radius: 10px;
+		img {
+			width: 18px;
+			height: 18px;
+			margin: 0px 5px;
+		}
+	}
+}
+
+// 子どもの名前 横並び
+#stamping_children_names {
+	display: flex;
+	justify-content: center;
+	margin-top: 10px;
+	height: 20px;
+	#stamping_children_name {
+		margin-right: 5px;
+	}
+}
+#stamping_times {
+	margin: 0;
+	padding: 10px;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+
+	// ラジオボタンの丸を消す
+	input {
+		display: none;
+	}
+
+	label {
+		padding: 5px 20px;
+		margin: 5px 10px;
+		background-color: #eeeeee;
+		width: 200px;
+		border: solid 2px #e0e0e0;
+		border-radius: 3px;
+	}
+
+	// チェックした時の装飾
+	input:checked + label {
+		background-color: #95e1d3;
+	}
+}
+.stamping_actions {
+	input {
+		margin: 10px 0px;
+		font-weight: bold;
+		width: 100%;
+		background-color: #fce38a;
+		border: solid 3px #fdd955;
+		border-radius: 5px;
+	}
+}
+
+#times {
+	display: none;
+}
+
+// --------- new.html編集 -----------------
+body {
+	text-align: center;
+}
+
+// -------- ラジオボタンの丸を消す ---------------
+#stamping_stamping_times_登園 {
+	display: none;
+}
+
+#stamping_stamping_times_降園 {
+	display: none;
+}
+
+// ---------------------------------------------
+
+// ------- ラベル装飾 --------------
+#stamping_times {
+	text-align: center;
+
+	#time_css {
+		border-radius: 10px;
+		border: solid 2px #e0e0e0;
+		width: 100px;
+	}
+}

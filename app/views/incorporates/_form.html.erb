@@ -1,0 +1,50 @@
+<%= form_with(model: incorporate) do |form| %>
+  <% if incorporate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(incorporate.errors.count, "error") %> prohibited this incorporate from being saved:</h2>
+
+      <ul>
+        <% incorporate.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div id="incorporate_dates" class="incorporate_flex">
+    <%= form.label :date, "投稿日:", class: :incorpoate_label %>
+    <%= form.date_select :date %>
+  </div>
+
+  <div id="incorporate_titles" class="incorporate_flex">
+    <%= form.label :title, "タイトル:", class: :incorpoate_label %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div id="incorporate_content">
+    <%= form.label :content, "内容" %>
+    <%= form.text_area :content %>
+  </div>
+
+  <div id="all_images"> 
+    <p id="incorporate_images">投稿画像</p>
+    <div class="incorporate_flex">
+      <%= form.label :image_1 , "画像1" , class: :incorpoate_label %>
+      <%= form.file_field :image_1 %>
+    </div>
+
+    <div class="incorporate_flex">
+      <%= form.label :image_2 ,"画像2", class: :incorpoate_label %>
+      <%= form.file_field :image_2 %>
+    </div>
+
+    <div class="incorporate_flex">
+      <%= form.label :image_3, "画像3", class: :incorpoate_label %>
+      <%= form.file_field :image_3 %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "投稿する" %>
+  </div>
+<% end %>
