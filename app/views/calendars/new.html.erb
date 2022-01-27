@@ -1,6 +1,9 @@
-<h1>行事予定入力・調整</h1>
 
-<%= render 'form', calendar: @calendar %>
+<div id="calendars_new_body">
+  <div class="parent_links">
+    <%= link_to "保護者システム", calendars_path ,id: :parent_tops_system %>
+  </div>
+  <h1>行事予定入力・調整</h1>
 
-<%= link_to 'Edit', edit_calendar_path(@calendar) %> |
-<%= link_to 'Back', calendars_path %>
+  <%= render 'form', calendar: @calendar %>
+</div>

@@ -1,5 +1,8 @@
-<h1>連絡ノート（保護者記入）</h1>
 
-<%= render 'form', parents_note: @parents_note %>
+<div id="parent_note_new_body">
+  <h1>連絡ノート（保護者記入）</h1>
 
-<%= link_to 'トップへ戻る', parent_tops_path %>
+  <%= render 'form', parents_note: @parents_note %>
+
+  <%= link_to 'トップへ戻る', parent_tops_path %>
+</div>

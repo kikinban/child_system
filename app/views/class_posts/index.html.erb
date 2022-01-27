@@ -1,11 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <h1>クラスの内容（一覧）</h1>
-<table>
+<table id="class_posts_table">
   <thead>
     <tr>
       <th>日付</th>
       <th>記事タイトル</th>
+      <th>内容</th>
     </tr>
   </thead>
   <tbody>
@@ -13,9 +14,7 @@
       <tr>
         <td><%= class_post.created_at.to_date %></td>
         <td><%= class_post.title %></td>
-        <td><%= link_to '見る', class_post %></td>
-        <td><%= link_to 'Edit', edit_class_post_path(class_post) %></td>
-        <td><%= link_to 'Destroy', class_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '詳細', class_post %></td>
       </tr>
       </tr>
     <% end %>

@@ -1,11 +1,13 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>登降園</strong>
-  <%= @stamping.stamping_times %>
-  <strong>打刻時間</strong>
-  <%= @stamping .created_at %>
-</p>
+<div id="stampings_show_body">
+  <h1>打刻詳細</h1>
+  <div class="stamping_show_div">
+    <p class="stamping_show_p">登降園:</p>
+    <p class="stamping_show_data"><%= @stamping.stamping_times %></p>
+  </div>
+  <div class="stamping_show_div">
+  <p class="stamping_show_p">打刻時間:</p>
+  <p class="stamping_show_data"><%= @stamping .created_at.strftime("%I:%M")  %></p>
+  </div>
 
-<%= link_to 'Edit', edit_stamping_path(@stamping) %> |
-<%= link_to 'Back', stampings_path %>
+</div>

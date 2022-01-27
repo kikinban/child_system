@@ -1,25 +1,29 @@
-<p id="notice"><%= notice %></p>
 
-<h1>変更内容</h1>
 <div id="change_posts_show">
-  <p>
-    <strong>日付変更:</strong>
-    <%= @change_post.date %>
-  </p>
-
-  <p>
-    <strong>時間変更:</strong>
-    <%= @change_post.time %>
-  </p>
-
-  <p>
-    <strong>送迎者変更:</strong>
-    <%= @change_post.person %>
-  </p>
-
-  <p>
-    <strong>その他・特記事項</strong><br>
-    <%= @change_post.others %>
-  </p>
+  <h1>変更内容</h1>
+  <div class="change_posts_show_div">
+    <p class="change_posts_show_p">お子様の名前:</p>
+    <p class="change_posts_show_data"><%= @change_post.children_name %></p>
+  </div>
+  <div class="change_posts_show_div">
+    <p class="change_posts_show_p">変更内容:</p>
+    <p class="change_posts_show_data"><%= @change_post.change_item %></p>
+  </div>
+  <div class="change_posts_show_div">
+    <p class="change_posts_show_p">変更日:</p>
+    <p class="change_posts_show_data"><%= @change_post.date.strftime("%Y年%m月%d日") %></p>
+  </div>
+  <div class="change_posts_show_div">
+    <p class="change_posts_show_p">時間変更:</p>
+    <p class="change_posts_show_data"><%= @change_post.change_content %>  <%= @change_post.time.strftime("%I:%M") %></p>
+  </div>
+  <div class="change_posts_show_div">
+    <p class="change_posts_show_p">送迎者変更:</p>
+    <p class="change_posts_show_data"><%= @change_post.person %></p>
+  </div>
+  <div class="change_posts_show_others">
+  <p class="change_posts_show_other">その他・特記事項</p>
+  <p><%= @change_post.others %></p>
+  </div>
 </div>
 

@@ -1,19 +1,308 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Activities:</strong>
-  <%= @daily_record.activities %>
-</p>
+<div id="daily_record_show_body">
+  <h1>連絡ノート（保護者様入力）</h1>
+  <%# 保護者が入力したデータを取得している(model:parents_note) %>
 
-<p>
-  <strong>States:</strong>
-  <%= @daily_record.states %>
-</p>
+  <%# 日付表示 %>
+  <div id="daily_record_data">
+    <p id="daily_record_data_p">日付:</p>
+    <div class="year"> 
+      <p> 
+      <%=  @parents_notes.parent_note_date[4] %>
+      <%=  @parents_notes.parent_note_date[5] %>
+      <%=  @parents_notes.parent_note_date[6] %>
+      <%=  @parents_notes.parent_note_date[7] %>
+      年</p>
+    </div>
+    <div class="month"> 
+      <p><%=  @parents_notes.parent_note_date[13] %> 月</p>
+    </div>
+    <div class="day"> 
+      <p> 
+      <%=  @parents_notes.parent_note_date[19] %>
+      <%=  @parents_notes.parent_note_date[20] %>
+      日</p>
+    </div>
+  </div>
 
-<p>
-  <strong>Information:</strong>
-  <%= @daily_record.information %>
-</p>
+  <%# 体調 %>
+  <div id="daily_record_condition">
+    <h3 class="daily_show_title_h3">体調</h3>
+    <p class="daily_record_p">今朝の体温: <%= @parents_notes.temperature %></p>
+    <p class="daily_record_p">体調: <%= @parents_notes.conditon %></p><%#カラム名違う condition%>
+  </div>
 
-<%= link_to 'Edit', edit_daily_record_path(@daily_record) %> |
-<%= link_to 'Back', daily_records_path %>
+  <%# 体調が悪く、入力した際に表示 if文 %>
+  <div id="dairy_record_hidden_detail">
+    <p class="daily_record_true_p">詳細
+    </p>
+    <div class="daily_record_detail">
+      <div class="detail_box">
+        <ul class="detail_box_ul">
+          <% if @parents_notes.snot == "false" && @parents_notes.cough == "false" && 
+          @parents_notes.slight_fever == "false" && @parents_notes.diarrhea == "false" &&
+          @parents_notes.vomiting == "false" && @parents_notes.anorexia == "false" &&
+          @parents_notes.cold == "false" %>無し
+          <li>
+            <% if @parents_notes.snot == "true" %>
+              鼻水
+            <% end %>
+          </li>
+          <li>
+            <% if @parents_notes.cough == "true" %>
+              咳
+            <% end %>
+          </li>
+          <li>
+            <% if @parents_notes.slight_fever == "true" %>
+              微熱
+            <% end %>
+          </li>
+          <li>
+            <%  if @parents_notes.heat == "true" %>
+            <% end %>
+          </li>
+          <li>
+            <% if @parents_notes.diarrhea == "true" %>
+              下痢
+            <% end %>
+          </li>
+          <li>
+            <% if @parents_notes.vomiting == "true" %>
+              嘔吐
+            <% end %>
+          </li>
+          <li>
+            <% if @parents_notes.anorexia == "true" %>
+              食欲不振
+            <% end %>
+          </li>
+          <li>
+            <% if @parents_notes.cold == "true" %>
+              風邪
+            <% end %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+      <div>
+        <p class="daily_record_true_p">追記・その他</p>
+        <div class="daily_border_height"><% if @parents_notes.condition_text.nil? %>無し<% end %></div>
+      </div>
+  </div>
+
+    <%# 排便 %>
+    <div>
+      <p class="daily_record_p">排便:
+        <% if @parents_notes.defecation == "none" %> 
+          無し
+        <% else %>
+          有り
+        <% end %>
+        <%= @parents_notes.stool_yes %> <%= @parents_notes.stool_number %>
+      </p>
+    </div>
+
+    <%# 薬 %>
+    <div>
+    <p class="daily_record_p">薬: 
+      <% if @parents_notes.medicine == "none" %> 
+        無し 
+      <% else %>
+        有り
+      <% end %>
+      <%= @parents_notes.medicine_yes %>
+    </p>
+    </div>
+  
+    <%# 食事 %>
+    <div id="daily_record_yesterday_dinner">
+      <h3 class="daily_show_title_h3">食事</h3>
+      <p class="daily_record_p">食欲（夕食）:
+        <% if @parents_notes.yesterday_appetite == "yes" %> 
+          有り
+        <% else %>
+          無し
+        <% end %>
+      </p>
+      <p class="daily_record_p">夕食メニュー: <%= @parents_notes.yesterday_dinner %> </p>
+    </div>
+    <div id="daily_record_breakfast">
+      <p class="daily_record_p">食欲（朝食）:
+        <% if @parents_notes.breakfast_appetite == "yes" %> 
+          有り
+        <% else %>
+          無し
+        <% end %>
+      </p>
+      <p class="daily_record_p">朝食メニュー: <%= @parents_notes.breakfast %> </p>
+    </div>
+  
+    <%# ご家庭の様子 %>
+    <h3 class="daily_show_title_h3">ご家庭での様子</h3>
+    <p><%= @parents_notes.states %></p>
+
+    <%# 保育者への連絡事項 %>
+    <h3 class="daily_show_title_h3">連絡事項</h3>
+    <p><%= @parents_notes.information %></p>
+
+    <%# 降園について %>
+    <div>
+      <h3 class="daily_show_title_h3">降園について</h3>
+      <p class="daily_record_p">迎えの方: <%= @parents_notes.person %> <%= @parents_notes.person_name %></p>
+    </div>
+  </div>
+</div>
+
+  <%# ------------------------------------------------------- %>
+  <%# --- ここから保育者側入力ノート反映 --- %>
+  <%# ------------------------------------------------------- %>
+
+  <%# 管理者が入力したデータを取得している(model:daily_record) %>
+
+<div id="daily_record_show_parent">
+  <div>
+    <p>↓ ↓ ↓ ここから保育者が入力したノートです↓ ↓ ↓</p>
+  </div>
+  <div id="parent_data">
+    <h1>連絡ノート（保育者入力）</h1>
+    <%# 体調 %>
+    <div class="parent_show_left">
+      <h3 class="parent_show_title_h3">体調</h3>
+      <p class="parent_record_p">午後の体温: <%= @daily_records.note_temperature %></p>
+      <p class="parent_record_p">体調: <%#= @parents_notes.note_condition %></p>
+      <p class="detail_true_p">詳細</p>
+      <div class="detail_box">  
+        <ul class="detail_box_ul">
+          <li>
+            <% if @daily_records.note_snot == "true" %>
+              鼻水
+            <% end %>
+          </li>
+          <li>
+            <% if @daily_records.note_cough == "true" %>
+              咳
+            <% end %>
+          </li>
+          <li>
+            <% if @daily_records.note_slight_fever == "true" %>
+              微熱
+            <% end %>
+          </li>
+          <li>
+            <% if @daily_records.note_heat == "true" %>
+              発熱
+            <% end %>
+          </li>
+          <li>
+            <% if @daily_records.note_diarrhea == "true" %>
+              下痢
+            <% end %>
+          </li>
+          <li>
+            <% if @daily_records.note_vomiting == "true" %>
+              嘔吐
+            <% end %>
+          </li>
+          <li>
+            <% if @daily_records.note_anorexia == "true" %>
+              食欲不振
+            <% end %>
+          </li>
+          <li>
+            <% if @daily_records.note_cold == "true" %>
+              風邪
+            <% end %>
+          </li>
+        </ul>
+        <div>
+          <p class="detail_true_p">追記・その他</p>
+          <div class="parent_border_height">
+            <% if @daily_records.note_condition_text.nil? %>無し<% end %>
+          </div>
+        </div>
+        <%# 排便 %>
+        <div>
+          <p class="parent_record_p">排便: 
+          <% if @daily_records.note_defecation == "yes" %>
+            有り
+          <% else %>
+            無し
+          <% end %>
+          <%= @daily_records.note_stool_yes %> <%= @daily_records.note_stool_number %>
+          </p>
+        </div>
+        <%# 怪我 %>
+        <div>
+          <p class="parent_record_p">怪我: 
+          <% if @daily_records.note_injury == "yes" %>
+            有り
+          <% else %>
+            無し
+          <% end %>
+          </p>
+          <div>
+            <%#= @parents_notes.note_injury_text %> <%#  カラム名違う  %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%# 食事 %>
+    <div class="parent_show_left">  
+      <h3 class="parents_show_title_h3">食事</h3>
+      <div>
+        <p class="parent_record_p">朝おやつ: 
+        <% if @daily_records.note_morning_snack == "complete" %>
+          完食
+        <% else %>
+          残食
+        <% end %>
+        </p>
+        <div>
+          <%= @daily_records.note_morning_remaining_contents %>
+        </div>
+      </div>
+      <div>
+        <p class="parent_record_p">昼食: 
+        <% if @daily_records.note_noon == "complete" %>
+          完食
+        <% else %>
+          残食
+        <% end %>
+        </p>
+        <div>
+          <%= @daily_records.note_noon_remaining_contents %>
+        </div>
+      </div>
+      <div>
+        <p class="parent_record_p">午後おやつ: 
+        <% if @daily_records.note_noon_snack == "complete" %>
+          完食
+        <% else %>
+          残食
+        <% end %>
+        </p>
+        <div>
+          <%= @daily_records.note_noon_snack_remaining_contents %>
+        </div>
+      </div>
+      <%# 様子 %>
+      <div>
+        <h3 class="parents_show_title_h3">保育園での様子</h3>
+        <%= @daily_records.states %>
+      </div>
+      <%# 連絡事項 %>
+      <div>
+        <h3 class="parents_show_title_h3">連絡事項</h3>
+        <%= @daily_records.information %>
+      </div>
+    </div>
+  <div>
+
+    </div>
+  </div>
+
+
+
+

@@ -12,12 +12,12 @@
   <% end %>
 
   <div id="incorporate_dates" class="incorporate_flex">
-    <%= form.label :date, "投稿日:", class: :incorpoate_label %>
+    <%= form.label :date, "投稿日:", class: :incorporate_label %>
     <%= form.date_select :date %>
   </div>
 
   <div id="incorporate_titles" class="incorporate_flex">
-    <%= form.label :title, "タイトル:", class: :incorpoate_label %>
+    <%= form.label :title, "タイトル:", class: :incorporate_label %>
     <%= form.text_field :title %>
   </div>
 
@@ -29,22 +29,22 @@
   <div id="all_images"> 
     <p id="incorporate_images">投稿画像</p>
     <div class="incorporate_flex">
-      <%= form.label :image_1 , "画像1" , class: :incorpoate_label %>
+      <%= form.label :image_1 , "画像1:" , class: :incorporate_label %>
       <%= form.file_field :image_1 %>
     </div>
 
     <div class="incorporate_flex">
-      <%= form.label :image_2 ,"画像2", class: :incorpoate_label %>
+      <%= form.label :image_2 ,"画像2:", class: :incorporate_label %>
       <%= form.file_field :image_2 %>
     </div>
 
     <div class="incorporate_flex">
-      <%= form.label :image_3, "画像3", class: :incorpoate_label %>
+      <%= form.label :image_3, "画像3:", class: :incorporate_label %>
       <%= form.file_field :image_3 %>
     </div>
   </div>
 
-  <div class="actions">
+  <div id="incorporate_action">
     <%= form.submit "投稿する" %>
   </div>
 <% end %>

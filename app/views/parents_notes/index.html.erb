@@ -1,27 +1,15 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Parents Notes</h1>
+<div id="parent_notes_choices">
+  <h1>連絡ノート</h1>
+  <div id="notes_choices">
+    <div class="notes_choice">
+      <%= link_to "新規記録", new_parents_note_path, class: "choices_p" %>
+      <p>登園前にご入力ください</p>
+    </div>
+    <div class="notes_choice">
+      <%= link_to "ノート確認", daily_records_path, class: "choices_p" %>
+      <p>保育者の記録をご確認ください</p>
+    </div>
+  </div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @parents_notes.each do |parents_note| %>
-      <tr>
-        <td><%= parents_note.content %></td>
-        <td><%= link_to 'Show', parents_note %></td>
-        <td><%= link_to 'Edit', edit_parents_note_path(parents_note) %></td>
-        <td><%= link_to 'Destroy', parents_note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Parents Note', new_parents_note_path %>

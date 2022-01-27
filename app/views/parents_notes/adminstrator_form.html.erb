@@ -1,0 +1,179 @@
+<%= form_with(model: parents_note) do |form| %>
+  <% if daily_record.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(parents_note.errors.count, "error") %> prohibited this daily_record from being saved:</h2>
+
+      <ul>
+        <% parents_note.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  </div>
+  
+  <div class="administrator_notes">
+    <p>本日のお子様について、連絡致します</p>
+    <div id="administrator_note_date">
+      <div id="condition">
+        <h3 class="parent_title_h3">体調</h3>
+        <div id="body_temperature">
+          <%= form.label :administrator_temperature, "午後の体温:" %>
+          <%= form.select :administrator_temperature, [["36.0~36.5","36.0~36.5"],["36.6~37.0","36.6~37.0"],["37.1~37.5","37.1~37.5"]] %>
+        </div>
+        <%# 体調 %>
+        <div id="condition_button">
+          <div class="three_button" id="condition_style">
+            <p class="button_title">体調:</p>
+            <%= form.radio_button :administrator_condition, :good %>
+            <%= form.label :administrator_condition_good, "良い" %>
+            <%= form.radio_button :administrator_condition, :somewhat_bad %>
+            <%= form.label :administrator_condition_somewhat_bad, "やや悪い" %>
+            <%= form.radio_button :administrator_condition, :bad %>
+            <%= form.label :administrator_condition_bad, "悪い" %>
+        </div>
+      </div>
+
+      <%# やや悪い・悪いボタンの場合（スライドダウン） %>
+      <div id="hidden_detail">
+        <%#= 複数選択クリック  %>
+        <div id="details">
+          <p class="details_title">詳細の選択・記入をお願いします</p>
+          <p>（複数選択可能）</p>
+          <div id="detail">
+            <div class="detail_box">
+              <%= form.check_box :snot, {}, "true", "false" %>
+              <%= form.label :snot, "鼻水" %>
+            </div>
+            <div class="detail_box">
+              <%= form.check_box :cough, {}, "true", "false" %>
+              <%= form.label :cough, "咳" %>
+            </div>
+            <div class="detail_box">
+              <%= form.check_box :slight_fever, {}, "true", "false" %>
+              <%= form.label :slight_fever, "微熱" %>
+            </div>
+            <div class="detail_box">
+              <%= form.check_box :heat, {}, "true", "false" %>
+              <%= form.label :heat, "発熱" %>
+            </div>
+            <div class="detail_box">
+              <%= form.check_box :diarrhea, {}, "true", "false" %>
+              <%= form.label :diarrhea, "下痢" %>
+            </div>
+            <div class="detail_box">
+              <%= form.check_box :vomiting, {}, "true", "false" %>
+              <%= form.label :vomiting, "嘔吐" %>
+            </div>
+            <div class="detail_box">
+              <%= form.check_box :anorexia, {}, "true", "false" %>
+              <%= form.label :anorexia, "食欲不振" %>
+            </div>
+            <div class="detail_box">
+              <%= form.check_box :cold, {}, "true", "false" %>
+              <%= form.label :cold, "風邪" %>
+            </div>
+            <div>
+              <p class="details_title">追記・その他</p>
+              <p class="condition_p">※上記の選択内容に追記がある場合は、詳細を入力ください。</p>
+              <p class="condition_p">※その他、体調面で連絡したいことがあれば入力ください。</p>
+              <%= form.text_area :condition %>  
+            </div>
+          </div>
+        </div>
+      </div>
+      <%# 排便 %>
+      <div class="twe_button" id="defecation">
+        <p class="button_title">排便:</p>
+        <%= form.radio_button :administrator_defecation, :yes %>
+        <%= form.label :administrator_defecation, "有り", {value: :yes} %>
+        <%= form.radio_button :administrator_defecation, :none %>
+        <%= form.label :administrator_defecation, "無し", {value: :none} %>
+      </div>
+      <%# 排便有りの場合（スライドダウン） %>
+      <div id="stool_hidden">
+        <div id="stool_yes">
+          <%= form.label :administrator_stool_yes, "便の様子" %>
+          <%= form.select :administrator_stool_yes, [["普通便","普通便"],["やや軟便","やや軟便"],["軟便","軟便"],["下痢","下痢"],["水様便","水様便"]] %>
+        </div>
+        <div id="stool_number">
+          <%= form.label :administrator_stool_number, "回数" %>
+          <%= form.select :administrator_stool_number, [["1回","1回"],["2回","2回"],["3回","3回"]] %>
+        </div>
+      </div>
+      <%# 怪我 %>
+      <div class="twe_button" id="injury">
+        <p class="button_title">怪我:</p>
+        <%= form.radio_button :administrator_injury, :yes %>
+        <%= form.label :administrator_injury, "有り", {value: :yes} %>
+        <%= form.radio_button :administrator_injury, :none %>
+        <%= form.label :administrator_injury, "無し", {value: :none} %>
+      </div>
+      <%# 怪我有りの場合（スライドダウン) %>
+      <div id="injury_hidden">
+        <%= form.label :administrator_injury_hidden, "怪我の詳細を記入ください" %>
+        <%= form.text_area :administrator_injury_hidden %>
+      </div>
+
+      <h3 class="parent_title_h3">食事</h3>
+      <div id="morning_snacks">
+        <p class="meal_p">朝おやつ</p>
+        <div class="twe_button" id="morning_snack">
+          <%= form.radio_button :morning_snack, :complete %>
+          <%= form.label :morning_snack, "完食", {value: :complete} %>
+          <%= form.radio_button :morning_snack, :remaining %>
+          <%= form.label :morning_snack, "残食", {value: :remaining} %>
+        </div>
+      </div>
+      <%# 残食ボタンをクリックすると、スライドダウン %>
+      <div id="morning_hidden">
+        <%= form.label :remaining_contents, "残食量と内容" %>
+        <%= form.text_area :remaining_contents %>
+      </div>
+      <div id="noons">
+        <p class="meal_p">昼食</p>
+        <div class="twe_button" id="noon">
+            <%= form.radio_button :noon, :complete %>
+            <%= form.label :noon, "完食", {value: :complete} %>
+            <%= form.radio_button :noon, :remaining %>
+            <%= form.label :noon, "残食", {value: :complete} %>
+            <%# 残食ボタンをクリックすると、スライドダウン %>
+            <div id="noon_hidden">
+              <%= form.label :remaining_contents, "残食量と内容" %>
+              <%= form.text_area :remaining_contents %>
+            </div>
+        </div>
+      </div>
+      <div id="noon_snacks">
+        <p class="meal_p">午後おやつ</p>
+        <div class="twe_button" id="noon_snack">
+            <%= form.radio_button :noon_snack, :complete %>
+            <%= form.label :noon_snack, "完食", {value: :complete} %>
+            <%= form.radio_button :noon_snack, :remaining %>
+            <%= form.label :noon_snack, "残食", {value: :remaining} %>
+            <%# 残食ボタンをクリックすると、スライドダウン %>
+            <div id="noon_snack_hidden">
+              <%= form.label :remaining_contents, "残食量と内容" %>
+              <%= form.text_area :remaining_contents %>
+            </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <h3 class="parent_title_h3">保育園での様子</h3>
+  <div id="today_states">
+    <%= form.label :states, "本日のエピソードや様子を記入ください" %>
+    <%= form.text_area :states %>
+  </div>
+  <h3 class="parent_title_h3">連絡事項</h3>
+  <div class="field">
+    <%= form.label :information, "連絡事項ある場合、記入ください" %>
+    <%= form.text_area :information %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit value="記録を保存", id: :daily_record_input %>
+  </div>
+<% end %>

@@ -1,11 +1,15 @@
+
+<%# --------------------------------------------------------
+管理者側システム
+------------------------------------------------------------%>
+
 <div id="class_posts_background_color">
   <div class="parent_links">
     <%= link_to "(保護者側)詳細一覧", class_posts_path %>
   </div>
 
-  <h1>クラスの様子</h1>
+  <h1 class="administrator_h1">クラスの様子</h1>
 
   <%= render 'form', class_post: @class_post %>
 
-  <%= link_to 'Back', class_posts_path %>
 </div>

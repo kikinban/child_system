@@ -1,27 +1,25 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Incorporates</h1>
+<div id="incorporates_index_body">
+  <h1>取り組み一覧</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>投稿日</th>
-      <th>タイトル</th>
-      <th>詳細</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @incorporates.each do |incorporate| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= incorporate.date %></td>
-        <td><%= incorporate.title %></td>
-        <td><%= link_to 'Show', incorporate %></td>
+        <th>投稿日</th>
+        <th>タイトル</th>
+        <th>詳細</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @incorporates.each do |incorporate| %>
+        <tr>
+          <td><%= incorporate.date %></td>
+          <td><%= incorporate.title %></td>
+          <td><%= link_to '詳細', incorporate %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Incorporate', new_incorporate_path %>
+</div>

@@ -1,6 +1,10 @@
-<h1>お知らせ・お願い</h1>
-<p>保護者宛てのお知らせ・お願いを入力ください</p>
+<div id="parent_information_new_body">
+  <div class="parent_links">
+  <%= link_to "保護者システム", parent_informations_path ,id: :parent_tops_system %>
+  </div>
+  <h1>お知らせ・お願い</h1>
+  <p>保護者宛てのお知らせ・お願いを入力ください</p>
 
-<%= render 'form', parent_information: @parent_information %>
+  <%= render 'form', parent_information: @parent_information %>
 
-<%= link_to 'Back', parent_informations_path %>
+</div>

@@ -1,29 +1,30 @@
 
-
-<div class="parent_links">
-  <%= link_to "(保護者側)入力システム", new_change_post_path %>
-</div>
-<h1>変更一覧</h1>
-<table>
-  <thead>
-    <tr>
-      <th>日付</th>
-      <th>名前</th>
-      <th>変更項目</th>
-      <th>詳細</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @change_posts.each do |change_post| %>
+<div id="change_posts_index_body">
+  <div class="parent_links">
+    <%= link_to "(保護者側)入力システム", new_change_post_path %>
+  </div>
+  <h1>変更一覧</h1>
+  <table>
+    <thead>
       <tr>
-        <td><%= change_post.date %></td>
-        <td></td>
-        <td><%= change_post.time %></td>
-        <td><%= link_to 'Show', change_post %></td>
+        <th>入力日付</th>
+        <th>名前</th>
+        <th>変更項目</th>
+        <th>内容</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @change_posts.each do |change_post| %>
+        <tr>
+          <td><%= change_post.created_at.strftime("%Y年%m月%d日") %></td>
+          <td><%= change_post.children_name %></td>
+          <td><%= change_post.change_item %></td>
+          <td><%= link_to '詳細', change_post %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
 

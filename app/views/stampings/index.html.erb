@@ -1,32 +1,31 @@
-<p id="notice"><%= notice %></p>
 
-<div class="parent_links">
-  <%= link_to "(保護者側)入力システム", new_stamping_path %>
+<div id="stamping_body">
+  <div class="parent_links">
+    <%= link_to "(保護者側)入力システム", new_stamping_path %>
+  </div>
+
+  <h1>打刻記録</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>名前</th>
+        <th>登園・降園</th>
+        <th>打刻時間</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @stampings.each do |stamping| %>
+        <tr>
+          <td></td>
+          <td><%= stamping.stamping_times %></td>
+          <td><%= stamping.created_at.strftime("%m月%d日 %H時%M分") %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
 
-<h1>打刻記録</h1>
-<table>
-  <thead>
-    <tr>
-      <th>名前</th>
-      <th>登園・降園</th>
-      <th>打刻時間</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @stampings.each do |stamping| %>
-      <tr>
-        <td></td>
-        <td><%= stamping.stamping_times %></td>
-        <td><%= stamping.created_at.strftime("%m月%d日 %H時%M分") %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 
 
-
-
-<%= link_to 'New Stamping', new_stamping_path %>

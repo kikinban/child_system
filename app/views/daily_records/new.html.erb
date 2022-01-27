@@ -1,7 +1,13 @@
-<h1>連絡ノート（保育者記入）</h1>
-<%# -------------- todo 日付を表示したい---------------------  %>
-<p>todo 保護者が入力した日付をそのまま反映</p>
 
-<%= render 'form', daily_record: @daily_record %>
+<div id="daily_record_new_body">
+  <div class="parent_links">
+  <%= link_to "保護者システム", parent_informations_path ,id: :parent_tops_system %>
+  </div>
+  <h1>連絡ノート（保育者記入）</h1>
+  <p>本日のお子様について、連絡致します</p>
 
-<%= link_to 'トップへ戻る', parent_tops_path %>
+  <%= render 'form', daily_record: @daily_record %>
+
+</div>
+
+

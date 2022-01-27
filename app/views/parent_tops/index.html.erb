@@ -1,48 +1,55 @@
-<p id="notice"><%= notice %></p>
-<div id="administrators_keys">
-  <div id="administrators_key">
-    <%= image_tag "key.png"%>
-    <%= link_to "管理者システム", administrators_path ,id: :administrators_system %>
+<div id="parent_tops_body">
+  <div id="administrators_keys">
+    <div id="administrators_key">
+      <%= link_to "管理者システム", administrators_path ,id: :administrators_system %>
+    </div>
   </div>
-</div>
 
-<div class="h1_images">
-  <%= image_tag "children.png",id: :children_image %>
-  <h1 id="parent_h1">こはた保育園</h1>
-  <%= image_tag "children.png",id: :children_image %>
-</div>
-<div id="new_arrival">
-  <p id="p_arrival">新着</p>
-  <div id="arrival">
+  <div class="h1_images">
+    <%= image_tag "children.png",id: :children_image %>
+    <h1 id="parent_h1">こはた保育園</h1>
+    <%= image_tag "children.png",id: :children_image %>
+  </div>
+  <div id="new_arrival">
+    <p id="p_arrival">新着</p>
+    <div id="arrival">
+      <div class="arrival_link">
+        <p class="arrival_new">NEW</p>
+        <p class="arrival_link_id"><%= link_to "連絡ノートが更新されました", daily_record_path(1) %></p>
+      </div>
+      <div class="arrival_link">
+        <p class="arrival_new">NEW</p>
+        <p class="arrival_link_id"><%= link_to "取り組みが更新されました", incorporates_path %></p>
+      </div>
+    </div>
+  </div>
+  <div id="parent_top_lists">
+    <ul>
+      <li><%= link_to "打刻システム", new_stamping_path ,class: "parent_list_title"%><br>
+        <p class="parent_top_p">登園・降園の打刻</p>
+      </li>
+      <li><%= link_to "変更届けシステム", new_change_post_path ,class: "parent_list_title"%><br>
+        <p class="parent_top_p">時間・迎え・欠席等</p>
+      </li>
+      <li><%= link_to "連絡ノート", parents_notes_path, class: "parent_list_title" %><br>
+        <p class="parent_top_p">お子様の記録一覧</p>
+      </li>
+      <li><%= link_to "クラスの様子", class_posts_path, class: "parent_list_title" %><br>
+          <p class="parent_top_p">活動や園生活の様子</p>
+      </li>
+      <li><%= link_to "行事・クラス予定", calendars_path, class: "parent_list_title" %><br>
+          <p class="parent_top_p">行事やクラスの日程</p>
+      </li>
+      <li><%= link_to "取り組み", incorporates_path, class: "parent_list_title" %><br>
+        <p class="parent_top_p">書類・取り組み</p>
+      </li>
+      <li><%= link_to "お問い合わせ", new_parent_form_path, class: "parent_list_title" %><br>
+        <p class="parent_top_p">ご要望・ご意見</p>
+      </li>
+      <li><%= link_to "お知らせ・お願い", parent_informations_path, class: "parent_list_title" %><br>
+        <p class="parent_top_p">より良い保育の為に…</p>
+      </li>
+    </ul>
   </div>
 </div>
-<div id="parent_top_lists">
-  <ul>
-    <li><%= link_to "打刻システム", new_stamping_path ,class: "parent_list_title"%><br>
-      <p class="parent_top_p">登園・降園の打刻</p>
-    </li>
-    <li><%= link_to "変更届けシステム", new_change_post_path ,class: "parent_list_title"%><br>
-      <p class="parent_top_p">時間・迎え・欠席等</p>
-    </li>
-    <li><%= link_to "連絡ノート", new_parents_note_path, class: "parent_list_title" %><br>
-      <p class="parent_top_p">お子様の記録一覧</p>
-    </li>
-    <li><%= link_to "クラスの様子", class_posts_path, class: "parent_list_title" %><br>
-        <p class="parent_top_p">活動や園生活の様子</p>
-    </li>
-    <li><%= link_to "行事・クラス予定", calendars_path, class: "parent_list_title" %><br>
-        <p class="parent_top_p">行事やクラスの日程</p>
-    </li>
-    <li><%= link_to "取り組み", incorporates_path, class: "parent_list_title" %><br>
-      <p class="parent_top_p">書類・取り組み</p>
-    </li>
-    <li><%= link_to "お問い合わせ", new_parent_form_path, class: "parent_list_title" %><br>
-      <p class="parent_top_p">ご要望・ご意見</p>
-    </li>
-    <li><%= link_to "お知らせ・お願い", parent_informations_path, class: "parent_list_title" %><br>
-      <p class="parent_top_p">より良い保育の為に…</p>
-    </li>
-  </ul>
-</div>
-<%= link_to 'トップ', parent_tops_path %>
 

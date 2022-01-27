@@ -1,24 +1,23 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Children name:</strong>
-  <%= @parent_form.children_name %>
-</p>
+<div id="parent_form_body">
+  <h1>お問い合わせ詳細</h1>
+  <div class="parent_form_show_div">
+    <p class="parent_form_show_p">お子様の名前:</p>
+    <p class="parent_form_show_data"><%= @parent_form.children_name %></p>
+  </div>
 
-<p>
-  <strong>Parent name:</strong>
-  <%= @parent_form.parent_name %>
-</p>
+  <div class="parent_form_show_div">
+    <p class="parent_form_show_p">保護者の名前:</p>
+    <p class="parent_form_show_data"><%= @parent_form.parent_name %></p>
+  </div>
 
-<p>
-  <strong>Content name:</strong>
-  <%= @parent_form.content_name %>
-</p>
+  <div class="parent_form_show_div">
+    <p class="parent_form_show_p">項目:</p>
+    <p class="parent_form_show_data"><%= @parent_form.content_name %></p>
+  </div>
 
-<p>
-  <strong>Contents:</strong>
-  <%= @parent_form.contents %>
-</p>
-
-<%= link_to 'Edit', edit_parent_form_path(@parent_form) %> |
-<%= link_to 'Back', parent_forms_path %>
+  <div class="parent_form_show_contents">
+    <p class="parent_form_show_content_p">内容</p>
+    <p class="parent_form_show_content"><%= @parent_form.contents %></p>
+  </div>
+</div>

@@ -1,27 +1,15 @@
-<p id="notice"><%= notice %></p>
 
-  <strong>Image 1:</strong>
-  <%= image_tag @class_post.image_1.url %>
-
-<p>
-  <strong>Image 2:</strong>
-  <%= image_tag @class_post.image_2.url %>
-</p>
-
-<p>
-  <strong>Image 3:</strong>
-  <%= image_tag @class_post.image_3.url %>
-</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @class_post.title %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @class_post.content %>
-</p>
-
-<%= link_to 'Edit', edit_class_post_path(@class_post) %> |
-<%= link_to 'Back', class_posts_path %>
+<div id="class_posts_show_body">
+  <h1>取り組み内容</h1>
+  <p class="class_posts_show_border_p">タイトル: <%= @class_post.title %></p>
+  <div>
+    <p class="class_posts_show_border_p">内容</p>
+    <p class="class_posts_show_content"><%= @class_post.content %></p>
+  </div>
+  <div>
+    <p class="class_posts_show_border_p">画像</p>
+    <%= image_tag @class_post.image_1.url %>
+    <%= image_tag @class_post.image_2.url %>
+    <%= image_tag @class_post.image_3.url %>
+  </div>
+</div>

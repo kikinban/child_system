@@ -29,11 +29,11 @@
           <div class="three_button" id="condition_style">
             <p class="button_title">体調:</p>
             <%= form.radio_button :condition, :good %>
-            <%= form.label :condition_good, "良い" %>
+            <%= form.label :condition, "良い", {value: :good} %>
             <%= form.radio_button :condition, :somewhat_bad %>
-            <%= form.label :condition_somewhat_bad, "やや悪い" %>
+            <%= form.label :condition, "やや悪い", {value: :somewhat_bad} %>
             <%= form.radio_button :condition, :bad %>
-            <%= form.label :condition_bad, "悪い" %>
+            <%= form.label :condition, "悪い", {value: :bad} %>
           </div>
         </div>
       <%# やや悪い・悪いボタンの場合（スライドダウン） %>
@@ -79,7 +79,7 @@
               <p class="details_title">追記・その他</p>
               <p class="condition_p">※上記の選択内容に追記がある場合は、詳細を入力ください。</p>
               <p class="condition_p">※その他、体調面で連絡したいことがあれば入力ください。</p>
-              <%= form.text_area :condition %>  
+              <%= form.text_area :condition_text %>  
             </div>
           </div>
         </div>
@@ -96,11 +96,11 @@
       <div id="stool_hidden">
         <div id="stool_yes">
           <%= form.label :stool_yes, "便の様子" %>
-          <%= form.select :stool_yes, [["普通便","普通便"],["やや軟便","やや軟便"],["軟便","軟便"],["下痢","下痢"],["水様便","水様便"]] %>
+          <%= form.select :stool_yes, [["普通便","普通便"],["やや軟便","やや軟便"],["軟便","軟便"],["下痢","下痢"],["水様便","水様便"]] ,{ prompt: "選択してください"} %>
         </div>
         <div id="stool_number">
           <%= form.label :stool_number, "回数" %>
-          <%= form.select :stool_number, [["1回","1回"],["2回","2回"],["3回","3回"]] %>
+          <%= form.select :stool_number, [["1回","1回"],["2回","2回"],["3回","3回"]] ,{ prompt: "選択してください"}  %>
         </div>
       </div>
       <%# 薬 %>
@@ -113,8 +113,8 @@
       </div>
       <%# 薬有りの場合（スライドダウン） %>
       <div id="medicine_hidden">
-        <%= form.label :megicine_yes, "薬の詳細をご記入ください" %>
-        <%= form.text_area :megicine_yes %>
+        <%= form.label :medicine_yes, "薬の詳細をご記入ください" %>
+        <%= form.text_area :medicine_yes %>
       </div>
     </div>
     <%# 食事 %>
@@ -122,6 +122,7 @@
     <p id="parent_title_p">昨日の夕食・今朝の朝食についてご記入ください</p>
     <p id="note_example">例） カレー、味噌汁、ポテトサラダ、イチゴ</p>
     <div id="yesterday_dinner">
+      <p class="parent_eat_p">夕食</p>
       <div class= "twe_button" id="yesterday_appetite">
         <p class="button_title">食欲:</p>
         <%= form.radio_button :yesterday_appetite, :yes %>
@@ -135,6 +136,7 @@
       </div>
     </div>
     <div id="breakfast">
+      <p class="parent_eat_p">朝食</p>
       <div class= "twe_button" id="breakfast_appetite">
       <p class="button_title">食欲:</p>
         <%= form.radio_button :breakfast_appetite, :yes %>
@@ -149,8 +151,6 @@
     </div>
   </div>
 
-      </div>
-    </div>
     <h3 class="parent_title_h3">ご家庭での様子</h3>
     <div class="field">
       <%= form.label :states, "何でもご記入ください" %>
@@ -170,18 +170,12 @@
       </p>
       <div id="person_flex">
         <%= form.label :person, "迎えの方:" %>
-        <%= form.select :person, [["祖母","祖母"],["祖父","祖父"],["姉","姉"],["その他","その他"],["母","母"],["父","父"]] %>
+        <%= form.select :person, [["祖母","祖母"],["祖父","祖父"],["姉","姉"],["その他","その他"],["母","母"],["父","父"]] ,{ prompt: "選択してください"} %>
         <%= form.label :person_name , "迎えにくる人の名前（フルネーム）"%>
         <%= form.text_field :person_name %>
       </div>
     </div>
-  </div>
 
-    <div class="actions">
-      <%= form.submit value="記録を保存", id: :parent_note_input %>
-    </div>
-        </div>
-      </div>
-    </div>
+    <%= form.submit value="記録を保存", id: :parent_note_input %>
     
-  <% end %>
+<% end %>

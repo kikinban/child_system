@@ -1,5 +1,10 @@
-<h1>取り組み</h1> 
 
-<%= render 'form', incorporate: @incorporate %>
+<div id="incorporates_new_body">
+  <div class="parent_links">
+  <%= link_to "保護者システム", incorporates_path ,id: :parent_tops_system %>
+  </div>
+  <h1>取り組み</h1> 
 
-<%= link_to 'Back', incorporates_path %>
+  <%= render 'form', incorporate: @incorporate %>
+
+</div>

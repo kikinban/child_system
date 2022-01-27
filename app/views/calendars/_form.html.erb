@@ -11,16 +11,15 @@
     </div>
   <% end %>
 
-  <div class="calendar_time" >
+  <div class="calendar_time" id="calendar_time_new">
     <%= form.label :start_time,"日付:" %>
     <%= raw sprintf(form.date_select(:start_time,use_month_numbers:true,date_separator: "%s"), "年","月")+"日" %>
-
   </div>
-  <div class="calendar_title">
+  <div class="calendar_title" id="calendar_title_new">
     <%= form.label :title, "行事名:" %>
     <%= form.text_field :title %>
   </div>
-  <div class="calendar_content">
+  <div class="calendar_content" id="calendar_content_new">
     <%= form.label :content, "行事詳細" %>
     <%= form.text_area :content %>
   </div>

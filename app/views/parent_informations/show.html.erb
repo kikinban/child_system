@@ -1,23 +1,23 @@
-<p id="notice"><%= notice %></p>
 
-<h1>お知らせ・お願い</h1>
-<div id="parent_information_show_all">
-  <p>
-    <strong>投稿日:</strong>
-    <%= @parent_information.date %>
-  </p>
-
-  <p>
-    <strong>タイトル:</strong>
-    <%= @parent_information.title %>
-  </p>
-
-  <p id="parent_information_p"><strong>内容</strong></p>
-  <p id="parent_information_show"><%= @parent_information.content %></p>
-
-
-  <p>
-    <%= image_tag @parent_information.file_content.url %>
-  </p>
+<div id="parent_information_show_body">
+  <h1>お知らせ・お願い</h1>
+  <div id="parent_information_show_all">
+    <div class="parent_information_show_div">
+      <p class="parent_information_show_p">投稿日:</p>
+      <p class="parent_information_show_data"><%= @parent_information.date.strftime("%Y年%m月%d日") %></p>
+    </div>
+    <div class="parent_information_show_div">
+      <p class="parent_information_show_p">タイトル:</p>
+      <p class="parent_information_show_data"><%= @parent_information.title %></p>
+    </div>
+    <div>
+      <p class="parent_information_show_content_p">内容</p>
+      <p class="parent_information_show_content"><%= @parent_information.content %></p>
+    </div>
+    <div id="parent_information_show_image">
+      <p class="parent_information_show_content_p">ファイル・画像</p>
+      <p><%= image_tag @parent_information.file_content.url %></p>
+    </div>
+  </div>
 </div>
 
