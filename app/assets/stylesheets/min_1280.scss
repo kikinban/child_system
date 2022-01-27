@@ -1,0 +1,70 @@
+// ----------------------------------------------------------------
+//        デバイスサイズ1280px以上の場合、反映。
+// -----------------------------------------------------------------
+
+// ----------------------------------------------------------------
+//      parent_top 保護者トップページ index
+// -----------------------------------------------------------------
+
+@media screen and (min-width: 1280px) {
+	// 全体
+	body {
+		width: 80%;
+		margin: 0 auto;
+		font-size: 18px;
+	}
+	// 家アイコン
+	#top_home {
+		img {
+			width: 25px;
+			height: 25px;
+		}
+	}
+	// トップページ
+	#parent_tops_body {
+		#parent_h1 {
+			font-size: 30px;
+			letter-spacing: 3px;
+		}
+		#children_image {
+			width: 36px;
+			height: 30px;
+		}
+	}
+	// 各ボタン大きさ
+	#parent_tops_body #parent_top_lists ul {
+		margin: 0 auto;
+		li {
+			margin: 20px;
+			width: 265px;
+			padding: 15px 10px;
+			// 見出しタイトル
+			.parent_list_title {
+				font-size: 20px;
+				border-bottom: dashed 3px #ff2e63;
+			}
+			// 見出し下タイトル
+			.parent_top_p {
+				font-size: 12px;
+				margin-top: 10px;
+			}
+		}
+	}
+	// 新着枠
+	#parent_tops_body #new_arrival {
+		width: 60%;
+		margin: 0 auto;
+		#arrival {
+			border: solid 3px gray;
+		}
+	}
+
+	// ----------------------------------------------------------------
+	//      parent_information show
+	// -----------------------------------------------------------------
+
+	// 画像大きさauto
+	#parent_information_show_body #parent_information_show_image img {
+		width: auto;
+	}
+}

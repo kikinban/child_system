@@ -3,105 +3,166 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 // ----------------------------------------------------
-//                 画像新規投稿ページ
+//        （管理者システム）画像新規投稿ページ new
 // ----------------------------------------------------
 
-// ----- フォーム部分 -----
-#post_images {
-	display: flex;
-	flex-direction: column;
-	position: relative;
-	margin: 20px;
-	//ラベルタグ隠す
-	label {
-		display: none;
-	}
-	//全体を中央に配置
-	#image_center {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		//文字を画像の上に表示
-		.p_image_1 {
-			position: absolute;
-			top: 10%;
-			margin: 0;
-		}
-		.p_image_2 {
-			position: absolute;
-			top: 40%;
-			margin: 0;
-		}
-		.p_image_3 {
-			position: absolute;
-			top: 75%;
-			margin: 0;
-		}
-		// ボタン余白
-		#class_post_image_1 {
-			margin: 10px 10px 10px 0px;
-		}
-		#class_post_image_2 {
-			margin: 10px 10px 10px 0px;
-		}
-		#class_post_image_3 {
-			margin: 10px 10px 10px 0px;
-		}
-	}
-	// プレビュー画像
-	#preview_1 {
-		width: 300px;
-		height: 200px;
-	}
-
-	#preview_2 {
-		width: 300px;
-		height: 200px;
-	}
-
-	#preview_3 {
-		width: 300px;
-		height: 200px;
-	}
-}
-
-// タイトル文字・テキストボックス
-#class_post_title {
-	display: flex;
-	label {
-		text-align: left;
-		margin: 5px 0;
-		border-left: solid 3px #fce38a;
-		display: inline-block;
-		padding: 0 5px;
-	}
-}
-#class_post_content {
-	width: 100%;
-	text-align: left;
-	label {
-		margin: 5px 0;
-		border-left: solid 3px #fce38a;
-		border-right: solid 3px #fce38a;
-		display: inline-block;
-		padding: 0 5px;
-	}
-	#class_post_content {
-		height: 150px;
-	}
-}
-// 記録するボタン
-#class_post_actions {
-	input {
-		margin: 10px 0px;
-		font-weight: bold;
-		width: 100%;
-		background-color: #fce38a;
-		border: solid 3px #fdd955;
-		border-radius: 5px;
-	}
-}
-
+// 全体余白・背景色
 #class_posts_background_color {
 	background-color: #eaeaea;
+	padding: 20px;
+	height: 100%;
+	// h1装飾
+	.administrator_h1 {
+		text-align: center;
+		font-size: 20px;
+		display: inline-block;
+		margin: 30px 10px 20px 10px;
+		padding: 5px;
+		background-image: linear-gradient(#eaeaea 70%, #08d9d6 70%);
+	}
+	// ----- フォーム部分 -----
+	#post_images {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		margin: 20px;
+
+		//ラベルタグ隠す
+		label {
+			display: none;
+		}
+		//全体を中央に配置
+		#image_center {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			//文字を画像の上に表示
+			.p_image_1 {
+				position: absolute;
+				top: 10%;
+				margin: 0;
+			}
+			.p_image_2 {
+				position: absolute;
+				top: 40%;
+				margin: 0;
+			}
+			.p_image_3 {
+				position: absolute;
+				top: 75%;
+				margin: 0;
+			}
+			// ボタン余白
+			#class_post_image_1 {
+				margin: 10px 10px 10px 0px;
+			}
+			#class_post_image_2 {
+				margin: 10px 10px 10px 0px;
+			}
+			#class_post_image_3 {
+				margin: 10px 10px 10px 0px;
+			}
+		}
+		// プレビュー画像
+		#preview_1 {
+			width: 300px;
+			height: 200px;
+		}
+
+		#preview_2 {
+			width: 300px;
+			height: 200px;
+		}
+
+		#preview_3 {
+			width: 300px;
+			height: 200px;
+		}
+	}
+
+	// タイトル文字・テキストボックス
+	#class_post_title {
+		display: flex;
+		label {
+			text-align: left;
+			margin: 5px 0;
+			border-left: solid 3px #08d9d6;
+			display: inline-block;
+			padding: 0 5px;
+		}
+	}
+	#class_post_content {
+		width: 100%;
+		text-align: left;
+		label {
+			margin: 5px 0;
+			border-left: solid 3px #08d9d6;
+			border-right: solid 3px #08d9d6;
+			display: inline-block;
+			padding: 0 5px;
+		}
+		#class_post_content {
+			height: 150px;
+		}
+	}
+	// 記録するボタン
+	#class_post_actions {
+		input {
+			margin: 10px 0px;
+			font-weight: bold;
+			width: 100%;
+			background-color: #08d9d6;
+			border: solid 3px #08d9d6;
+			border-radius: 5px;
+		}
+	}
+}
+
+// ----------------------------------------------------------------
+//      index（保護者システム）
+// ----------------------------------------------------------------
+
+// テーブルを中央配置
+#class_posts_table {
+	margin: 0 auto;
+}
+
+// ----------------------------------------------------------------
+//      show（保護者システム）
+// ----------------------------------------------------------------
+
+// 全体余白
+#class_posts_show_body {
+	padding: 20px;
+
+	p {
+		margin: 10px 20px;
+	}
+
+	// 見出しp
+	.class_posts_show_p {
+		text-align: left;
+	}
+
+	// データ取得
+	.class_posts_show_data {
+		text-align: left;
+	}
+
+	// 内容大きさ
+	.class_posts_show_content {
+		height: 100px;
+		text-align: left;
+	}
+	// 内容・画像
+	.class_posts_show_border_p {
+		border-bottom: solid 3px #fce38a;
+		padding-bottom: 5px;
+	}
+
+	img {
+		width: 100%;
+		height: auto;
+		margin: 10px 0;
+	}
 }

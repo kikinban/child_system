@@ -2,22 +2,53 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+// ------------------------------------------------
+//                index
+// ------------------------------------------------
+
+// 全体余白・背景色
 #administrator_body {
 	background-color: #eaeaea;
+	padding: 20px;
+	// 全体h1装飾
 	.h1_images {
 		margin: 20px 0px;
 		display: flex;
 		justify-content: center;
 	}
+	// h1
 	.top_h1 {
 		margin: 0;
 		background-image: none;
 	}
+	// 管理者画像:アイコン
 	#administrator_image {
 		width: 18px;
 		height: 18px;
 		margin: 5px 10px;
 	}
+
+	// 新着枠
+	#new_arrival {
+		padding: 10px 20px;
+		// 新着文字
+		#p_arrival {
+			margin: 0;
+			text-align: left;
+			padding: 5px 0 5px 10px;
+		}
+		// 枠
+		#arrival {
+			height: 80px;
+			border: solid 2px gray;
+			border-radius: 3px;
+			// リンク先
+			.arrival_link {
+				margin: 10px 0;
+			}
+		}
+	}
+	// リストで表示
 	#administrator_lists {
 		ul {
 			list-style: none;
@@ -35,7 +66,7 @@
 				width: 138px;
 				.administrator_p {
 					font-size: 10px;
-					margin: 0;
+					margin-top: 3px;
 				}
 
 				.administrator_list_title {

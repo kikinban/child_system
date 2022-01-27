@@ -5,82 +5,86 @@
 // -------------------------------------------------------
 //                保護者ページtop(index)
 // -------------------------------------------------------
+#parent_tops_body {
+	padding: 20px;
 
-// 管理者システムボタン
-#administrators_keys {
-	text-align: right;
-	// ボタン
-	#administrators_key {
-		display: inline-block;
-		border: solid 2px #3333;
-		border-radius: 10px;
-		padding: 5px 10px 5px 25px;
-	}
-	a {
-		text-decoration: none;
-	}
-	img {
-		position: absolute;
-		right: 138px;
-	}
-}
-// タイトル画像
-.h1_images {
-	margin: 15px 0px;
-	display: flex;
-	justify-content: center;
-}
-// 保護者トップのh1
-#parent_h1 {
-	margin: 0;
-	background-image: none;
-	padding: 0;
-}
-// 画像
-#children_image {
-	width: 18px;
-	height: 18px;
-	margin: 0 10px;
-}
-// 新着枠
-#new_arrival {
-	#p_arrival {
-		margin: 0;
-		text-align: left;
-	}
-	#arrival {
-		height: 50px;
-		border: solid 2px gray;
-		border-radius: 3px;
-	}
-}
-// -------------- システム一覧 ---------------
-#parent_top_lists {
-	ul {
-		list-style: none;
-		padding: 0;
-		text-align: center;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-
-		li {
-			margin: 5px;
-			border: solid 3px #fce38a;
+	// 管理者システムボタン
+	#administrators_keys {
+		text-align: right;
+		// ボタン
+		#administrators_key {
+			display: inline-block;
+			border: solid 2px #3333;
 			border-radius: 10px;
-			padding: 5px 10px;
-			width: 138px;
-
-			.parent_top_p {
-				font-size: 10px;
-				margin: 0;
+			padding: 5px;
+		}
+		a {
+			text-decoration: none;
+		}
+	}
+	// タイトル画像
+	.h1_images {
+		margin: 15px 0px;
+		display: flex;
+		justify-content: center;
+	}
+	// 保護者トップのh1
+	#parent_h1 {
+		margin: 0;
+		background-image: none;
+		padding: 0;
+	}
+	// 画像
+	#children_image {
+		width: 18px;
+		height: 18px;
+		margin: 0 10px;
+	}
+	// 新着枠
+	#new_arrival {
+		padding: 10px 20px;
+		#p_arrival {
+			margin: 0;
+			text-align: left;
+			padding: 5px 0 5px 10px;
+		}
+		#arrival {
+			height: 80px;
+			border: solid 2px gray;
+			border-radius: 3px;
+			.arrival_link {
+				margin: 10px 0;
 			}
+		}
+	}
+	// -------------- システム一覧 ---------------
+	#parent_top_lists {
+		ul {
+			list-style: none;
+			padding: 0;
+			text-align: center;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
 
-			.parent_list_title {
-				font-weight: bold;
-				text-decoration: none;
-				border-bottom: dashed 1px #ff2e63;
-				padding: 2px;
+			li {
+				margin: 5px;
+				border: solid 3px #fce38a;
+				border-radius: 10px;
+				padding: 5px 10px;
+				width: 138px;
+
+				.parent_top_p {
+					font-size: 10px;
+					margin-top: 3px;
+				}
+
+				.parent_list_title {
+					font-weight: bold;
+					text-decoration: none;
+					border-bottom: dashed 1px #ff2e63;
+					padding: 2px;
+				}
 			}
 		}
 	}

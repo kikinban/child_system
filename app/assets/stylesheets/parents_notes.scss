@@ -2,172 +2,373 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+// -------------------------------------------------------------
+//             連絡ノート 保護者入力 new
+// ----------------------------------------------------------------
+
 // ----------------- フォーム画面装飾 -----------------
 
 // ※.three_button,.twe_buttonの装飾記載はdaily_records.scssにある ※
 
-// 体調・様子について
-#parents_notes {
-	display: flex;
-	flex-direction: column;
+// 全体の余白
+#parent_note_new_body {
+	padding: 20px;
+	// 体調・様子について
+	#parents_notes {
+		display: flex;
+		flex-direction: column;
 
-	// 夕食メニュー枠サイズ
-	#parents_note_yesterday_dinner {
-		width: 300px;
+		// 夕食メニュー枠サイズ
+		#parents_note_yesterday_dinner {
+			width: 300px;
+			height: 50px;
+			margin-top: 5px;
+		}
+		// 朝食メニュー枠サイズ
+		#parents_note_breakfast {
+			width: 300px;
+			height: 50px;
+			margin-top: 5px;
+		}
+	}
+
+	// 記入日余白
+	#parent_note_date {
+		display: flex;
+		justify-content: center;
+		padding: 10px;
+	}
+
+	// 今朝の体温
+	#body_temperature {
+		display: flex;
+		align-items: center;
+		margin: 5px 0;
+		label {
+			margin: 0px 5px 0px 0px;
+			border-left: solid 3px #fce38a;
+			display: inline-block;
+			padding: 0 5px;
+		}
+	}
+
+	// このページのh3タイトルcss
+	.parent_title_h3 {
+		border-bottom: dashed 2px #fce38a;
+		padding: 5px;
+		margin: 10px 0px;
+	}
+	//h3タイトル下のp
+	#parent_title_p {
+		margin-bottom: 5px;
+	}
+	// ラジオボタン装飾
+	.three_button {
+		margin: 0;
+		text-align: center;
+		display: flex;
+		align-items: center;
+		.button_title {
+			width: 40px;
+			text-align: left;
+			margin: 0;
+			border-left: solid 3px #fce38a;
+			display: inline-block;
+			padding: 0 5px;
+		}
+		// ラジオボタンの丸を消す
+		input {
+			display: none;
+		}
+		// チェックした時の装飾
+		input:checked + label {
+			background-color: #fce38a;
+		}
+
+		label {
+			padding: 5px 20px;
+			margin: 10px 0px;
+			background-color: #eeeeee;
+		}
+
+		label:first-of-type {
+			border-radius: 3px 0 0 3px;
+			border-right: solid 2px #e0e0e0;
+		}
+
+		label:last-of-type {
+			border-radius: 0 3px 3px 0;
+			border-left: solid 2px #e0e0e0;
+		}
+	}
+	// ラジオボタン
+	.twe_button {
+		margin: 0;
+		text-align: center;
+		display: flex;
+		align-items: center;
+		.button_title {
+			width: 40px;
+			text-align: left;
+			margin: 0;
+			border-left: solid 3px #fce38a;
+			display: inline-block;
+			padding: 0 5px;
+		}
+
+		// ラジオボタンの丸を消す
+		input {
+			display: none;
+		}
+
+		// チェックした時の装飾
+		input:checked + label {
+			background-color: #fce38a;
+		}
+
+		label {
+			padding: 5px 20px;
+			margin: 10px 0px;
+			background-color: #eeeeee;
+		}
+
+		label:first-of-type {
+			border-radius: 3px 0 0 3px;
+			border-right: solid 2px #e0e0e0;
+		}
+
+		label:last-of-type {
+			border-radius: 0 3px 3px 0;
+		}
+	}
+	// やや悪い・悪いボタンのチェックボックスを隠す
+	#hidden_detail {
+		display: none;
+		//選択項目
+		#details {
+			border: solid 1px #fce38a;
+			text-align: center;
+			border-radius: 5px;
+			margin: 0px 13%;
+			#detail {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+			}
+			// 項目ごとのデザイン
+			.detail_box {
+				display: flex;
+				justify-content: center;
+				border: dashed 2px #95e1d3;
+				border-radius: 3px;
+				margin: 5px 5px;
+				padding: 5px;
+				width: 100px;
+			}
+			// テキストボックス上文字
+			.condition_p {
+				margin: 0px 0px 5px 0px;
+				text-align: left;
+				padding: 0px 10px;
+			}
+			// タイトル文字
+			.details_title {
+				margin: 5px;
+				border-bottom: solid 3px #fce38a;
+			}
+			p {
+				margin: 0px;
+			}
+			// テキストボックスサイズ
+			#parents_note_condition {
+				width: 90%;
+				height: 100px;
+				margin-bottom: 10px;
+			}
+			#parents_note_condition_text {
+				width: 90%;
+				margin-bottom: 10px;
+			}
+		}
+	}
+
+	// 排便有りの場合のテキスト隠す
+	#stool_hidden {
+		display: none;
+		margin: 0px 14%;
+		width: 37%;
+		border: solid 1px #fce38a;
+		border-radius: 3px;
+		text-align: center;
+		padding: 5px;
+		flex-direction: column;
+		label {
+			margin: 5px 0;
+		}
+	}
+
+	// 怪我有りのテキストボックス隠す
+	#injury_hidden {
+		display: none;
+		border: solid 1px #fce38a;
+		border-radius: 3px;
+		width: 81%;
+		margin: 0 13%;
+		padding: 5px;
+		text-align: center;
+		// 怪我の詳細テキストボックス
+		#daily_record_injury_hidden {
+			margin-top: 5px;
+			width: 95%;
+		}
+	}
+
+	// 食事例欄の枠
+	#note_example {
+		padding: 10px 10px;
+		border: solid 1px gray;
+		border-radius: 4px;
+		padding-left: 10px;
+		margin: 0 auto;
+		width: 78%;
+	}
+
+	// 食欲p
+	.parent_eat_p {
+		border-bottom: solid 1px #fce38a;
+		margin: 10px 0;
+		padding: 5px;
+	}
+	// 夕食メニュー
+	#yesterday_menu {
+		text-align: left;
+		label {
+			margin-right: 5px;
+			margin: 0;
+			border-left: solid 3px #fce38a;
+			border-right: solid 3px #fce38a;
+			display: inline-block;
+			padding: 0 5px;
+		}
+		#parents_note_yesterday_dinner {
+			width: 100%;
+			height: 50px;
+			margin-top: 5px;
+		}
+	}
+
+	// 朝食メニュー
+	#breakfast_menu {
+		text-align: left;
+		label {
+			margin-right: 5px;
+			margin: 0;
+			border-left: solid 3px #fce38a;
+			border-right: solid 3px #fce38a;
+			display: inline-block;
+			padding: 0 5px;
+		}
+		#parents_note_breakfast {
+			width: 100%;
+			height: 50px;
+			margin-top: 5px;
+		}
+	}
+
+	// 体調選択ボタン
+	#condition_button {
+		display: flex;
+	}
+
+	// 家庭での様子の枠サイズ
+	#parents_note_states {
+		width: 100%;
+		height: 200px;
+		margin-top: 5px;
+	}
+
+	// 保育者連絡事項欄、枠サイズ
+	#parents_note_information {
+		width: 100%;
 		height: 50px;
 		margin-top: 5px;
 	}
-	// 朝食メニュー枠サイズ
-	#parents_note_breakfast {
-		width: 300px;
-		height: 50px;
-		margin-top: 5px;
+
+	// 降園について装飾
+	#person_flex {
+		display: flex;
+		flex-wrap: wrap;
+		label {
+			border-left: solid 3px #fce38a;
+			display: inline-block;
+			padding: 0 5px;
+			margin: 5px 5px 5px 0px;
+		}
+	}
+
+	// 排便有りの場合に表示される（隠す）
+	#stool_hidden {
+		display: none;
+		margin: 0px 14%;
+		width: 37%;
+		border: solid 1px #fce38a;
+		border-radius: 3px;
+		text-align: center;
+		padding: 5px;
+		flex-direction: column;
+	}
+
+	// 薬有りの場合に表示される（隠す）
+	#medicine_hidden {
+		display: none;
+		border: solid 1px #fce38a;
+		border-radius: 3px;
+		width: 53%;
+		margin: 0 13%;
+		padding: 5px;
+		text-align: center;
+		// 薬の詳細テキストボックス
+		#parents_note_medicine_yes {
+			width: 95%;
+			height: 70px;
+			margin-top: 10px;
+		}
+	}
+
+	// フォーム投稿ボタン
+	#parent_note_input {
+		margin: 10px 0px;
+		font-weight: bold;
+		width: 100%;
+		background-color: #fce38a;
+		border: solid 3px #fdd955;
+		border-radius: 5px;
 	}
 }
 
-// 記入日余白
-#parent_note_date {
+// -----------------------------------------------------
+//             index (保護者側選択画面)
+// ------------------------------------------------------
+
+#notes_choices {
 	display: flex;
 	justify-content: center;
-	padding: 5px;
-}
+	margin: 15px;
 
-// 今朝の体温
-#body_temperature {
-	display: flex;
-	align-items: center;
-	margin: 5px 0;
-	label {
-		margin: 0px 5px 0px 0px;
-		border-left: solid 3px #fce38a;
-		display: inline-block;
-		padding: 0 5px;
+	.notes_choice {
+		border: solid 2px #fce38a;
+		border-radius: 10px;
+		padding: 10px;
+		margin: 5px;
+		width: 40%;
+
+		.choices_p {
+			text-decoration: none;
+			display: inline-block;
+		}
+		p {
+			font-size: 10px;
+			margin-top: 5px;
+		}
 	}
-}
-
-// このページのh3タイトルcss
-.parent_title_h3 {
-	border-bottom: dashed 2px #fce38a;
-	padding: 5px;
-	margin: 10px 0px;
-}
-//h3タイトル下のp
-#parent_title_p {
-	margin-bottom: 5px;
-}
-
-// 食事例欄の枠
-#note_example {
-	padding: 10px 10px;
-	border: solid 1px gray;
-	border-radius: 4px;
-	padding-left: 10px;
-	margin: 0 auto;
-	width: 78%;
-}
-
-// 夕食メニュー
-#yesterday_menu {
-	text-align: left;
-	label {
-		margin-right: 5px;
-		margin: 0;
-		border-left: solid 3px #fce38a;
-		border-right: solid 3px #fce38a;
-		display: inline-block;
-		padding: 0 5px;
-	}
-	#parents_note_yesterday_dinner {
-		width: 100%;
-		height: 50px;
-		margin-top: 5px;
-	}
-}
-
-// 朝食メニュー
-#breakfast_menu {
-	text-align: left;
-	label {
-		margin-right: 5px;
-		margin: 0;
-		border-left: solid 3px #fce38a;
-		border-right: solid 3px #fce38a;
-		display: inline-block;
-		padding: 0 5px;
-	}
-	#parents_note_breakfast {
-		width: 100%;
-		height: 50px;
-		margin-top: 5px;
-	}
-}
-
-// 体調選択ボタン
-#condition_button {
-	display: flex;
-}
-
-// 家庭での様子の枠サイズ
-#parents_note_states {
-	width: 100%;
-	height: 200px;
-	margin-top: 5px;
-}
-
-// 保育者連絡事項欄、枠サイズ
-#parents_note_information {
-	width: 100%;
-	height: 50px;
-	margin-top: 5px;
-}
-
-// 降園について装飾
-#person_flex {
-	display: flex;
-	flex-wrap: wrap;
-	label {
-		border-left: solid 3px #fce38a;
-		display: inline-block;
-		padding: 0 5px;
-		margin: 5px 5px 5px 0px;
-	}
-}
-
-// 排便有りの場合に表示される（隠す）
-#stool_hidden {
-	display: none;
-	margin: 0px 14%;
-	width: 37%;
-	border: solid 1px #fce38a;
-	border-radius: 3px;
-	text-align: center;
-	padding: 5px;
-	flex-direction: column;
-}
-
-// 薬有りの場合に表示される（隠す）
-#medicine_hidden {
-	display: none;
-	border: solid 1px #fce38a;
-	border-radius: 3px;
-	width: 53%;
-	margin: 0 13%;
-	padding: 5px;
-	text-align: center;
-	// 薬の詳細テキストボックス
-	#parents_note_medicine_yes {
-		width: 95%;
-		height: 70px;
-		margin-top: 10px;
-	}
-}
-
-// フォーム投稿ボタン
-#parent_note_input {
-	margin: 10px 0px;
-	font-weight: bold;
-	width: 100%;
-	background-color: #fce38a;
-	border: solid 3px #fdd955;
-	border-radius: 5px;
 }

@@ -1,0 +1,111 @@
+// ----------------------------------------------------------------
+//        デバイスサイズ600px以上の場合、反映。
+// -----------------------------------------------------------------
+
+// ----------------------------------------------------------------
+//      parent_top 保護者トップページ index
+// -----------------------------------------------------------------
+@media screen and (min-width: 600px) {
+	// 全体
+	body {
+		width: 80%;
+		margin: 0 auto;
+		font-size: 18px;
+		// ホーム画像
+		#top_home {
+			left: 5%;
+			img {
+				width: 20px;
+				height: 20px;
+			}
+		}
+		// 全てのh1
+		h1 {
+			font-size: 25px;
+			margin: 40px;
+		}
+	}
+
+	// 余白
+	#parent_tops_body .h1_images {
+		margin: 35px 0;
+		// h1
+		#parent_h1 {
+			font-size: 25px;
+			letter-spacing: 3px;
+		}
+		// 赤ちゃんアイコン
+		#children_image {
+			width: 30px;
+			height: 25px;
+		}
+	}
+	// 各項目ul
+	#parent_tops_body #parent_top_lists ul {
+		width: 90%;
+		margin: 0 auto;
+		li {
+			margin: 15px;
+			width: 165px;
+		}
+	}
+
+	// 新着枠
+	#parent_tops_body #new_arrival {
+		width: 90%;
+		margin: 0 auto;
+	}
+
+	// 管理者システム枠
+	#parent_tops_body #administrators_keys {
+		width: 95%;
+		img {
+			right: 190px;
+		}
+	}
+
+	// ----------------------------------------------------------------
+	//      change_posts new
+	// -----------------------------------------------------------------
+
+	// 変更システム p 余白
+	#change_posts_new_body {
+		#change_title {
+			margin: 0 0 40px 0;
+		}
+	}
+
+	// ----------------------------------------------------------------
+	//      change_posts new
+	// -----------------------------------------------------------------
+
+	// 枠
+	#notes_choices .notes_choice {
+		border: solid 4px #fce38a;
+		// 詳細文字
+		p {
+			font-size: 11px;
+		}
+	}
+
+	// 3個選択ボタン
+	#parent_note_new_body .three_button .button_title {
+		width: 45px;
+	}
+	// 2個選択ボタン
+	#parent_note_new_body .twe_button .button_title {
+		width: 45px;
+	}
+
+	// ----------------------------------------------------------------
+	//      calendar index
+	// -----------------------------------------------------------------
+	.simple-calendar #calendar_table tr td #calendar_hidden {
+		width: 110px;
+	}
+
+	#administrator_body #administrator_image {
+		width: 25px;
+		height: 25px;
+	}
+}

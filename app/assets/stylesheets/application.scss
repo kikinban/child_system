@@ -16,6 +16,8 @@
 */
 
 @import "reset.scss";
+@import "min_600.scss";
+@import "min_1280.scss";
 
 body {
 	background-color: #eaffd0;
@@ -36,5 +38,6 @@ h1 {
 #top_home {
 	text-align: left;
 	position: absolute;
-	top: 40px;
+	top: 30px;
+	left: 20px;
 }

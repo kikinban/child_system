@@ -2,10 +2,83 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-// 管理者側：入力フォームページ
+// -------------------------------------------------------------
+//              管理者側：入力フォームページ
+// -------------------------------------------------------------
 
-// ------------------------  ラジオボタン全体装飾 -------------------------
-.three_button {
+// 全体余白・背景色変更
+#daily_record_new_body {
+	padding: 20px 20px 0 20px;
+	background-color: #eaeaea;
+	// h1タイトル
+	h1 {
+		text-align: center;
+		font-size: 20px;
+		display: inline-block;
+		margin: 30px 10px 20px 10px;
+		padding: 5px;
+		background-image: linear-gradient(#eaeaea 70%, #08d9d6 70%);
+	}
+}
+
+// 新着
+#arrival {
+	padding: 5px 10px;
+
+	.arrival_link {
+		display: flex;
+
+		.arrival_new {
+			border: solid 1px #ff2e63;
+			padding: 2px;
+		}
+
+		.arrival_link_id {
+			margin-left: 20px;
+			padding: 2px;
+
+			a {
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+// 入力日
+#daily_note_date {
+	display: flex;
+	justify-content: center;
+	padding: 10px;
+}
+
+// フォーム全体余白
+#daily_record_form_body {
+	padding: 20px;
+	background-color: #eaeaea;
+	height: 100vh;
+}
+
+// h3タイトル
+.daily_title_h3 {
+	border-bottom: dashed 2px #08d9d6;
+	padding: 5px;
+	margin: 10px 0px;
+}
+
+#daily_body_temperature {
+	display: flex;
+	margin: 5px 0px;
+	label {
+		border-left: solid 3px #08d9d6;
+		display: inline-block;
+		padding: 0 5px;
+		#daily_record_temperature {
+			margin-left: 5px;
+		}
+	}
+}
+// ラジオボタン装飾
+.daily_twe_button {
 	margin: 0;
 	text-align: center;
 	display: flex;
@@ -14,7 +87,7 @@
 		width: 40px;
 		text-align: left;
 		margin: 0;
-		border-left: solid 3px #fce38a;
+		border-left: solid 3px #08d9d6;
 		display: inline-block;
 		padding: 0 5px;
 	}
@@ -24,13 +97,219 @@
 	}
 	// チェックした時の装飾
 	input:checked + label {
-		background-color: #95e1d3;
+		background-color: #08d9d6;
 	}
 
 	label {
 		padding: 5px 20px;
 		margin: 10px 0px;
-		background-color: #eeeeee;
+		background-color: #ffffff;
+	}
+
+	label:first-of-type {
+		border-radius: 3px 0 0 3px;
+		border-right: solid 2px #e0e0e0;
+	}
+}
+
+// やや悪い・悪いボタンのチェックボックスを隠す
+#daily_hidden_detail {
+	display: none;
+	//選択項目
+	#daily_details {
+		border: solid 1px #08d9d6;
+		text-align: center;
+		border-radius: 5px;
+		margin: 0px 13%;
+		#daily_detail {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		// 項目ごとのデザイン
+		.daily_detail_box {
+			display: flex;
+			justify-content: center;
+			border: dashed 2px #ff2e63;
+			border-radius: 3px;
+			margin: 5px 5px;
+			padding: 5px;
+			width: 100px;
+		}
+		// テキストボックス上文字
+		.condition_p {
+			margin: 0px 0px 5px 0px;
+			text-align: left;
+			padding: 0px 10px;
+		}
+		// タイトル文字
+		.daily_details_title {
+			margin: 5px;
+			border-bottom: solid 3px #08d9d6;
+		}
+		p {
+			margin: 0px;
+		}
+		// テキストボックスサイズ
+		#daily_record_note_condition_text {
+			width: 90%;
+			height: 100px;
+			margin-bottom: 10px;
+		}
+	}
+}
+
+// 排便有りの場合のテキスト隠す
+#daily_stool_hidden {
+	display: none;
+	margin: 0px 14%;
+	width: 37%;
+	border: solid 1px #08d9d6;
+	border-radius: 3px;
+	text-align: center;
+	padding: 5px;
+	flex-direction: column;
+	label {
+		margin: 5px 0;
+	}
+}
+
+// 怪我有りのテキストボックス隠す
+#daily_injury_hidden {
+	display: none;
+	border: solid 1px #08d9d6;
+	border-radius: 3px;
+	width: 81%;
+	margin: 0 13%;
+	padding: 5px;
+	text-align: center;
+	label {
+		border-bottom: solid 2px #08d9d6;
+		padding-bottom: 5px;
+	}
+	// 怪我の詳細テキストボックス
+	#daily_record_note_injury_text {
+		margin-top: 5px;
+		width: 95%;
+	}
+}
+
+// 食事の見出しp
+.meal_p {
+	margin: 0;
+	border-left: solid 3px #08d9d6;
+	display: inline-block;
+	padding: 0 5px;
+}
+// ------------------- 朝おやつ ----------------------
+
+// 朝おやつ文字
+#morning_snacks {
+	display: flex;
+	align-items: center;
+	p {
+		margin-right: 5px;
+	}
+}
+// 残食のテキストボックスを隠す
+#morning_hidden {
+	display: none;
+	border: solid 1px #08d9d6;
+	border-radius: 3px;
+	width: 74%;
+	margin: 0 21%;
+	padding: 5px;
+	text-align: center;
+	// 残食の詳細テキストボックス
+	#daily_record_note_morning_remaining_contents {
+		margin-top: 5px;
+		width: 90%;
+		height: 30px;
+	}
+}
+
+// ------------------- 昼食 ----------------------
+
+// 昼食文字
+#noons {
+	display: flex;
+	align-items: center;
+	p {
+		margin-right: 5px;
+	}
+}
+
+// 隠す
+#noon_hidden {
+	display: none;
+	border: solid 1px #08d9d6;
+	border-radius: 3px;
+	width: 74%;
+	margin: 0 21%;
+	padding: 5px;
+	text-align: center;
+	#daily_record_note_noon_remaining_contents {
+		margin-top: 5px;
+		width: 90%;
+		height: 30px;
+	}
+}
+
+// ------------------- 午後おやつ ----------------------
+
+// 午後おやつ文字
+#noon_snacks {
+	display: flex;
+	align-items: center;
+	p {
+		margin-right: 5px;
+	}
+}
+
+// 隠す
+#noon_snack_hidden {
+	display: none;
+	border: solid 1px #08d9d6;
+	border-radius: 3px;
+	width: 74%;
+	margin: 0 21%;
+	padding: 5px;
+	text-align: center;
+	#daily_record_note_noon_snack_remaining_contents {
+		margin-top: 5px;
+		width: 90%;
+		height: 30px;
+	}
+}
+
+.daily_three_button {
+	margin: 0;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	.button_title {
+		width: 40px;
+		text-align: left;
+		margin: 0;
+		border-left: solid 3px #08d9d6;
+		display: inline-block;
+		padding: 0 5px;
+	}
+
+	// ラジオボタンの丸を消す
+	input {
+		display: none;
+	}
+
+	// チェックした時の装飾
+	input:checked + label {
+		background-color: #08d9d6;
+	}
+
+	label {
+		padding: 5px 20px;
+		margin: 10px 0px;
+		background-color: #ffffff;
 	}
 
 	label:first-of-type {
@@ -44,152 +323,11 @@
 	}
 }
 
-// やや悪い・悪いボタンのチェックボックスを隠す
-#hidden_detail {
-	display: none;
-	//選択項目
-	#details {
-		border: solid 1px #fce38a;
-		text-align: center;
-		border-radius: 5px;
-		margin: 0px 13%;
-		#detail {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
-		}
-		// 項目ごとのデザイン
-		.detail_box {
-			display: flex;
-			justify-content: center;
-			border: dashed 2px #95e1d3;
-			border-radius: 3px;
-			margin: 5px 5px;
-			padding: 5px;
-			width: 80px;
-		}
-		// テキストボックス上文字
-		.condition_p {
-			margin: 0px 0px 5px 0px;
-			text-align: left;
-			padding: 0px 10px;
-		}
-		// タイトル文字
-		.details_title {
-			margin: 5px;
-			border-bottom: solid 3px #fce38a;
-		}
-		p {
-			margin: 0px;
-		}
-		// テキストボックスサイズ
-		#parents_note_condition {
-			width: 90%;
-			height: 100px;
-			margin-bottom: 10px;
-		}
-	}
-}
-
-// 怪我有りのテキストボックス隠す
-#injury_hidden {
-	display: none;
-	border: solid 1px #fce38a;
-	border-radius: 3px;
-	width: 81%;
-	margin: 0 13%;
-	padding: 5px;
-	text-align: center;
-	// 怪我の詳細テキストボックス
-	#daily_record_injury_hidden {
-		margin-top: 5px;
-		width: 95%;
-	}
-}
-
-// 食事の見出しp
-.meal_p {
-	margin: 0;
-	border-left: solid 3px #fce38a;
-	display: inline-block;
-	padding: 0 5px;
-}
-// ------------------- 朝おやつ ----------------------
-// 残食のテキストボックスを隠す
-#morning_hidden {
-	display: none;
-	border: solid 1px #fce38a;
-	border-radius: 3px;
-	width: 74%;
-	margin: 0 21%;
-	padding: 5px;
-	text-align: center;
-	// 残食の詳細テキストボックス
-	#daily_record_remaining_contents {
-		margin-top: 5px;
-		width: 95%;
-	}
-}
-
-// ------------------- 昼食 ----------------------
-#noon_hidden {
-	display: none;
-}
-
-// ------------------- 午後おやつ ----------------------
-#noon_snack_hidden {
-	display: none;
-}
-
-.twe_button {
-	margin: 0;
-	text-align: center;
-	display: flex;
-	align-items: center;
-	.button_title {
-		width: 40px;
-		text-align: left;
-		margin: 0;
-		border-left: solid 3px #fce38a;
-		display: inline-block;
-		padding: 0 5px;
-	}
-
-	// ラジオボタンの丸を消す
-	input {
-		display: none;
-	}
-
-	// チェックした時の装飾
-	input:checked + label {
-		background-color: #95e1d3;
-	}
-
-	label {
-		padding: 5px 20px;
-		margin: 10px 0px;
-		background-color: #eeeeee;
-
-		// // 余分な線を消す
-		// &.radio_border {
-		//   border-left: none;
-		// }
-	}
-
-	label:first-of-type {
-		border-radius: 3px 0 0 3px;
-		border-right: solid 2px #e0e0e0;
-	}
-
-	label:last-of-type {
-		border-radius: 0 3px 3px 0;
-	}
-}
-
 // 本日の様子のテキストボックス
 #daily_record_states {
 	width: 100%;
 	margin-top: 5px;
+	height: 200px;
 }
 
 // 連絡事項のテキストボックス
@@ -198,12 +336,175 @@
 	margin-top: 5px;
 }
 
+// 降園について
+#person_flex {
+	margin: 10px 0;
+}
+
 // 記録保存ボタン
 #daily_record_input {
 	margin: 10px 0px;
 	font-weight: bold;
 	width: 100%;
-	background-color: #fce38a;
-	border: solid 3px #fdd955;
+	background-color: #08d9d6;
+	border: solid 3px #069997;
 	border-radius: 5px;
+}
+
+// --------------------------------------------------------
+//            ノート詳細画面 index
+// --------------------------------------------------------
+
+// 全体余白
+#daily_record_index_body {
+	padding: 20px;
+	// 新規記録
+	.daily_record_new {
+		border: solid 2px #fce38a;
+		border-radius: 10px;
+		padding: 10px;
+		margin: 10px;
+		display: inline;
+	}
+	// ノート確認
+	.notes_choice {
+		padding: 10px;
+		margin: 10px;
+
+		p {
+			margin-bottom: 10px;
+			border-left: solid 3px #fce38a;
+			border-right: solid 3px #fce38a;
+			display: inline-block;
+			padding: 0 5px;
+		}
+
+		table {
+			margin: 0 auto;
+			th {
+				border: solid 1px #fce38a;
+				padding: 5px;
+			}
+			td {
+				border: solid 1px #fce38a;
+				padding: 5px;
+			}
+
+			a {
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+// --------------------------------------------------------
+//            ノート詳細画面 show
+// --------------------------------------------------------
+
+// ---------------- 全体余白(保護者入力画面) ---------------------
+#daily_record_show_body {
+	padding: 20px;
+	// 日付表示
+	#daily_record_data {
+		display: flex;
+		justify-content: center;
+		border: solid 1px #fce38a;
+		border-radius: 5px;
+		padding: 5px;
+		// 日付枠
+		#daily_record_data_p {
+			margin-right: 5px;
+		}
+		// 月文字横に余白
+		.month {
+			margin: 0 5px;
+		}
+	}
+
+	//
+	.daily_show_title_h3 {
+		border-bottom: dashed 2px #fce38a;
+		padding: 5px;
+		margin: 10px 0px;
+		text-align: center;
+	}
+
+	// 項目装飾 p
+	.daily_record_p {
+		border-left: solid 3px #fce38a;
+		padding-left: 5px;
+		margin: 10px 0;
+	}
+
+	// 詳細・追記、その他
+	.daily_record_true_p {
+		border-bottom: solid 1px #fce38a;
+		padding: 0 0 5px 10px;
+		margin-bottom: 10px;
+	}
+	// 体調
+	#daily_record_condition {
+		text-align: left;
+	}
+	#dairy_record_hidden_detail {
+		text-align: left;
+		.detail_box {
+			.detail_box_ul {
+				list-style: none;
+				padding: 0 10px 10px 10px;
+			}
+		}
+	}
+
+	.daily_border_height {
+		padding: 0 10px 10px 10px;
+	}
+}
+
+// ------------------  全体余白(管理者側入力画面)  -------------------------
+#daily_record_show_parent {
+	background-color: #eaeaea;
+	padding: 20px;
+
+	h1 {
+		text-align: center;
+		font-size: 20px;
+		display: inline-block;
+		margin: 30px 10px 20px 10px;
+		padding: 5px;
+		background-image: linear-gradient(#eaeaea 70%, #08d9d6 70%);
+	}
+
+	.parent_show_left {
+		text-align: left;
+		.detail_box {
+			.detail_box_ul {
+				list-style: none;
+			}
+		}
+		.parent_show_title_h3 {
+			border-bottom: dashed 2px #08d9d6;
+			padding: 5px;
+			margin: 10px 0px;
+			text-align: center;
+		}
+		.parent_record_p {
+			border-left: solid 3px #08d9d6;
+			padding-left: 5px;
+			margin: 10px 0;
+		}
+
+		.parents_show_title_h3 {
+			border-bottom: dashed 2px #08d9d6;
+			padding: 5px;
+			margin: 10px 0px;
+			text-align: center;
+		}
+
+		.detail_true_p {
+			border-bottom: solid 1px #08d9d6;
+			padding: 0 0 5px 10px;
+			margin-bottom: 10px;
+		}
+	}
 }
