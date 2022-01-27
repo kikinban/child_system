@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :stampings
   root to: "calendars#index"
   resources :calendars
-  resources :parents_notes
+  resources :parents_notes 
   resources :attempts
   resources :daily_records
   get 'home/top'
