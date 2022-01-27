@@ -2,12 +2,16 @@
 <div id="stampings_show_body">
   <h1>打刻詳細</h1>
   <div class="stamping_show_div">
+    <p class="stamping_show_p">名前:</p>
+    <p class="stamping_show_data"><%= @stamping.stamping_children_name %></p>
+  </div>
+  <div class="stamping_show_div">
     <p class="stamping_show_p">登降園:</p>
     <p class="stamping_show_data"><%= @stamping.stamping_times %></p>
   </div>
   <div class="stamping_show_div">
   <p class="stamping_show_p">打刻時間:</p>
-  <p class="stamping_show_data"><%= @stamping .created_at.strftime("%I:%M")  %></p>
+  <p class="stamping_show_data"><%= @stamping .created_at.strftime("%H:%M")  %></p>
   </div>
 
 </div>

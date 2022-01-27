@@ -17,7 +17,7 @@
     <tbody>
       <% @stampings.each do |stamping| %>
         <tr>
-          <td></td>
+          <td><%= stamping.stamping_children_name %></td>
           <td><%= stamping.stamping_times %></td>
           <td><%= stamping.created_at.strftime("%m月%d日 %H時%M分") %></td>
         </tr>

@@ -3,7 +3,7 @@
   <h1>変更内容</h1>
   <div class="change_posts_show_div">
     <p class="change_posts_show_p">お子様の名前:</p>
-    <p class="change_posts_show_data"><%= @change_post.children_name %></p>
+    <p class="change_posts_show_data"><%= @change_post.change_children_name %></p>
   </div>
   <div class="change_posts_show_div">
     <p class="change_posts_show_p">変更内容:</p>
@@ -15,7 +15,7 @@
   </div>
   <div class="change_posts_show_div">
     <p class="change_posts_show_p">時間変更:</p>
-    <p class="change_posts_show_data"><%= @change_post.change_content %>  <%= @change_post.time.strftime("%I:%M") %></p>
+    <p class="change_posts_show_data"><%= @change_post.change_content %>  <%= @change_post.time.strftime("%H:%M") %></p>
   </div>
   <div class="change_posts_show_div">
     <p class="change_posts_show_p">送迎者変更:</p>

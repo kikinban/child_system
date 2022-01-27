@@ -18,6 +18,6 @@
 
   <div class="parent_form_show_contents">
     <p class="parent_form_show_content_p">内容</p>
-    <p class="parent_form_show_content"><%= @parent_form.contents %></p>
+    <p class="parent_form_show_content"><%= simple_format(@parent_form.contents) %></p>
   </div>
 </div>

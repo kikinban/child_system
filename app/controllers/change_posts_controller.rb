@@ -64,7 +64,7 @@ class ChangePostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def change_post_params
-      params.require(:change_post).permit(:children_name,:date,:change_item,:date,
+      params.require(:change_post).permit(:change_children_name,:date,:change_item,:date,
       :change_content,:time,:person,:others)
     end
 end

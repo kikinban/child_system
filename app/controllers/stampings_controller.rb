@@ -63,6 +63,6 @@ class StampingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def stamping_params
-      params.require(:stamping).permit(:start_time, :end_time, :stamping_times, :created_at)
+      params.require(:stamping).permit(:start_time, :end_time, :stamping_times, :created_at, :stamping_children_name)
     end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_24_121629) do
+ActiveRecord::Schema.define(version: 2022_01_27_154553) do
 
   create_table "administrators", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.text "content"
@@ -39,11 +39,10 @@ ActiveRecord::Schema.define(version: 2022_01_24_121629) do
     t.text "others"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "children_name"
-    t.string "change_item"
-    t.string "change_post_children_name"
     t.string "change_content"
     t.string "change_time"
+    t.string "change_children_name"
+    t.string "change_item"
   end
 
   create_table "class_posts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -62,8 +61,6 @@ ActiveRecord::Schema.define(version: 2022_01_24_121629) do
     t.text "information"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "temperature"
-    t.string "condition"
     t.string "note_temperature"
     t.string "note_condition"
     t.string "note_snot"

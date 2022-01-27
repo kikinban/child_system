@@ -98,6 +98,13 @@
 	}
 
 	// ----------------------------------------------------------------
+	//      change_posts show
+	// -----------------------------------------------------------------
+	#change_posts_show .change_posts_show_p {
+		width: 125px;
+	}
+
+	// ----------------------------------------------------------------
 	//      calendar index
 	// -----------------------------------------------------------------
 	.simple-calendar #calendar_table tr td #calendar_hidden {
@@ -107,5 +114,14 @@
 	#administrator_body #administrator_image {
 		width: 25px;
 		height: 25px;
+	}
+
+	#administrator_body #administrator_lists ul {
+		width: 90%;
+		margin: 0 auto;
+		li {
+			margin: 15px;
+			width: 165px;
+		}
 	}
 }
