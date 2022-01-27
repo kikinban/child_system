@@ -4,7 +4,8 @@ class ParentTopsController < ApplicationController
   # GET /parent_tops or /parent_tops.json
   def index
     @parent_tops = ParentTop.all
-
+    @daily_records = DailyRecord.last
+    @parents_notes = ParentsNote.all
   end
 
   # GET /parent_tops/1 or /parent_tops/1.json

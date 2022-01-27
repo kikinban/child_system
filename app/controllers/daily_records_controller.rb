@@ -4,10 +4,13 @@ class DailyRecordsController < ApplicationController
   # GET /daily_records or /daily_records.json
   def index
     @daily_records = DailyRecord.all
+    @parents_notes = ParentsNote.all
   end
 
   # GET /daily_records/1 or /daily_records/1.json
   def show
+    @parents_notes = ParentsNote.last
+    @daily_records = DailyRecord.last
   end
 
   # GET /daily_records/new
@@ -26,7 +29,7 @@ class DailyRecordsController < ApplicationController
     respond_to do |format|
       if @daily_record.save
         format.html { redirect_to @daily_record, notice: "Daily record was successfully created." }
-        format.json { render :show, status: :created, location: @daily_record }
+        # format.json { render :show, status: :created, location: @daily_record }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @daily_record.errors, status: :unprocessable_entity }
@@ -64,6 +67,10 @@ class DailyRecordsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def daily_record_params
-      params.require(:daily_record).permit(:activities, :states, :information)
+      params.require(:daily_record).permit(:activities, :states, :information,:note_temperature,
+      :note_condition,:note_snot,:note_cough,:note_slight_fever,:note_heat,:note_diarrhea,
+      :note_vomiting,:note_anorexia,:note_cold,:note_condition_text,:note_defecation,:note_stool_yes,
+      :note_stool_number,:note_injury,:note_morning_snack,:note_morning_snack,:note_morning_remaining_contents,
+      :note_noon,:note_noon_remaining_contents,:note_noon_snack,:note_noon_snack_remaining_contents)
     end
 end

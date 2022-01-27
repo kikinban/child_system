@@ -3,7 +3,7 @@ class ChangePostsController < ApplicationController
 
   # GET /change_posts or /change_posts.json
   def index
-    @change_posts = ChangePost.all
+    @change_posts = ChangePost.all.order(created_at: "DESC")
   end
 
   # GET /change_posts/1 or /change_posts/1.json
@@ -64,6 +64,7 @@ class ChangePostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def change_post_params
-      params.require(:change_post).permit(:date, :time, :person, :others)
+      params.require(:change_post).permit(:children_name,:date,:change_item,:date,
+      :change_content,:time,:person,:others)
     end
 end

@@ -4,6 +4,8 @@ class ParentsNotesController < ApplicationController
   # GET /parents_notes or /parents_notes.json
   def index
     @parents_notes = ParentsNote.all
+    @daily_records = DailyRecord.all
+
   end
 
   # GET /parents_notes/1 or /parents_notes/1.json
@@ -57,13 +59,19 @@ class ParentsNotesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_parents_note
-      @parents_note = ParentsNote.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_parents_note
+    @parents_note = ParentsNote.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def parents_note_params
-      params.require(:parents_note).permit(:content)
-    end
+  # Only allow a list of trusted parameters through.
+  def parents_note_params
+    params.require(:parents_note).permit(:content,:parent_note_date,:temperature,
+      :conditon,:snot,:cough,:slight_fever,:heat,:diarrhea,:vomiting,:anorexia,
+      :cold,:condition_text,:defecation,:stool_yes,:stool_number,:medicine,
+      :medicine_yes,:yesterday_appetite,:yesterday_dinner,:breakfast_appetite,
+      :breakfast,:states,:information,:person,:person_name)
+  end
+
 end
+
