@@ -122,9 +122,25 @@
 //      index（保護者システム）
 // ----------------------------------------------------------------
 
-// テーブルを中央配置
-#class_posts_table {
-	margin: 0 auto;
+// 全体余白
+#class_posts_index_body {
+	padding: 20px;
+	// テーブルを中央配置
+	table {
+		margin: 0 auto;
+		margin: 0 auto;
+		th {
+			border: solid 1px #fce38a;
+			padding: 5px;
+		}
+		td {
+			border: solid 1px #fce38a;
+			padding: 5px;
+		}
+		a {
+			text-decoration: none;
+		}
+	}
 }
 
 // ----------------------------------------------------------------
@@ -138,6 +154,7 @@
 	p {
 		margin: 10px 20px;
 		text-align: left;
+		line-height: initial;
 	}
 
 	// 内容大きさ
@@ -151,9 +168,25 @@
 		text-align: center;
 	}
 
-	img {
-		width: 100%;
-		height: auto;
-		margin: 10px 0;
+	// 画像をスライドショー
+	#class_posts_show_images {
+		img {
+			width: 50%;
+			height: auto;
+			margin: 10px 0;
+		}
+	}
+	// 前矢印ボタン
+	.slick-prev {
+		padding: 0 20px;
+	}
+	// 次矢印ボタン
+	.slick-next {
+		padding: 40px;
+	}
+	// ボタンのカラー
+	.slick-prev:before,
+	.slick-next:before {
+		color: #fce38a;
 	}
 }

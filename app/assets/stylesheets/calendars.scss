@@ -121,11 +121,14 @@
 	.calendar_content_show {
 		text-align: left;
 		margin-bottom: 20px;
-		p {
+		.calendar_content_show_p {
+			text-align: center;
 			margin: 0 5px 5px 0;
 			border-bottom: solid 3px #fce38a;
 			padding: 0 10px;
-			margin: 15px 0 0 0;
+		}
+		p {
+			border: none;
 		}
 	}
 }

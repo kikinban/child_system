@@ -9,7 +9,7 @@
 @media screen and (min-width: 1280px) {
 	// 全体
 	body {
-		width: 80%;
+		width: 70%;
 		margin: 0 auto;
 		font-size: 18px;
 	}
@@ -66,5 +66,46 @@
 	// 画像大きさauto
 	#parent_information_show_body #parent_information_show_image img {
 		width: auto;
+	}
+
+	// ----------------------------------------------------------------
+	//      class_posts   show
+	// -----------------------------------------------------------------
+
+	// 画像を横並び
+	#class_posts_show_images {
+		width: 50%;
+		margin: 0 auto;
+		// 前矢印ボタン
+		.slick-prev {
+			left: -80px;
+		}
+		// 次矢印ボタン
+		.slick-next {
+			right: -80px;
+		}
+
+		// ボタンの矢印サイズ
+		.slick-prev:before,
+		.slick-next:before {
+			font-size: 35px;
+		}
+	}
+
+	// ----------------------------------------------------------------
+	//      class_posts   show
+	// -----------------------------------------------------------------
+	.incorporates_show_images {
+		width: 50%;
+		margin: 0 auto;
+	}
+
+	// ----------------------------------------------------------------
+	//      parent_information show
+	// -----------------------------------------------------------------
+
+	// 画像の大きさ
+	#parent_information_show_content_image {
+		width: 70%;
 	}
 }

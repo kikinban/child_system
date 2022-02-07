@@ -82,6 +82,9 @@
 			text-align: center;
 			padding: 5px;
 		}
+		a {
+			text-decoration: none;
+		}
 	}
 }
 
@@ -102,6 +105,7 @@
 			border-left: solid 3px #fce38a;
 			padding-left: 5px;
 			text-align: left;
+			width: 100px;
 		}
 		// データ取得
 		.incorporates_show_data {
@@ -114,12 +118,12 @@
 		.incorporates_show_contents_p {
 			border-bottom: solid 3px #fce38a;
 			padding-bottom: 5px;
+			text-align: center;
 		}
-		.incorporates_show_content {
-			height: 100px;
-			width: 100%;
+		p {
 			text-align: left;
 			margin-top: 5px;
+			line-height: initial;
 		}
 	}
 

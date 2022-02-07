@@ -420,13 +420,23 @@
 			margin: 0 5px;
 		}
 	}
-
-	//
+	// 食事・様子・連絡・降園タイトル
 	.daily_show_title_h3 {
 		border-bottom: dashed 2px #fce38a;
 		padding: 5px;
 		margin: 10px 0px;
 		text-align: center;
+	}
+	// 連絡事項の文字間隔
+	#daily_show_information_p {
+		p {
+			line-height: initial;
+		}
+	}
+
+	// 文字の上下間隔
+	.line_height_p {
+		line-height: initial;
 	}
 
 	// 項目装飾 p
@@ -451,7 +461,12 @@
 		.detail_box {
 			.detail_box_ul {
 				list-style: none;
-				padding: 0 10px 10px 10px;
+				padding: 0 10px 10px 0;
+				display: flex;
+				margin: 5px 0;
+				li {
+					margin-left: 10px;
+				}
 			}
 		}
 	}
@@ -480,13 +495,23 @@
 		.detail_box {
 			.detail_box_ul {
 				list-style: none;
+				display: flex;
+				margin: 5px 0 15px 0;
+				li {
+					margin-left: 10px;
+				}
 			}
 		}
-		.parent_show_title_h3 {
-			border-bottom: dashed 2px #08d9d6;
-			padding: 5px;
-			margin: 10px 0px;
-			text-align: center;
+		#parents_show_title_states {
+			.parent_show_title_h3 {
+				border-bottom: dashed 2px #08d9d6;
+				padding: 5px;
+				margin: 10px 0px;
+				text-align: center;
+			}
+			p {
+				line-height: initial;
+			}
 		}
 		.parent_record_p {
 			border-left: solid 3px #08d9d6;
