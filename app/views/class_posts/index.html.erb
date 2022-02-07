@@ -1,27 +1,25 @@
-<p id="notice"><%= notice %></p>
 
-<h1>クラスの内容（一覧）</h1>
-<table id="class_posts_table">
-  <thead>
-    <tr>
-      <th>日付</th>
-      <th>記事タイトル</th>
-      <th>内容</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @class_posts.each do |class_post| %>
+<div id="class_posts_index_body">
+  <h1>クラスの内容（一覧）</h1>
+  <table>
+    <thead>
       <tr>
-        <td><%= class_post.created_at.to_date %></td>
-        <td><%= class_post.title %></td>
-        <td><%= link_to '詳細', class_post %></td>
+        <th>日付</th>
+        <th>記事タイトル</th>
+        <th>内容</th>
       </tr>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @class_posts.each do |class_post| %>
+        <tr>
+          <td><%= class_post.created_at.to_date %></td>
+          <td><%= class_post.title %></td>
+          <td><%= link_to '詳細', class_post %></td>
+        </tr>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
 
-<br>
-
-<%= link_to 'New Class Post', new_class_post_path %>

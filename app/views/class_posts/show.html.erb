@@ -7,9 +7,11 @@
     <p class="class_posts_show_content"><%= simple_format(@class_post.content) %></p>
   </div>
   <div>
-    <p class="class_posts_show_border_p">画像</p>
-    <%= image_tag @class_post.image_1.url %>
-    <%= image_tag @class_post.image_2.url %>
-    <%= image_tag @class_post.image_3.url %>
+    <p class="class_posts_show_border_p">写真</p>
+    <div id="class_posts_show_images">
+      <%= image_tag @class_post.image_1.url %>
+      <%= image_tag @class_post.image_2.url %>
+      <%= image_tag @class_post.image_3.url %>
+    </div>
   </div>
 </div>

@@ -2,20 +2,22 @@
 <html>
   <head>
     <title>こはた保育園システム</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0> <%# メディアサイズ %>
+    <meta name="viewport" content="width=device-width", initial-scale=1.0 > <%# メディアサイズ %>
     <%= csrf_meta_tags %> <%# 外部からの不正アクセスに対処する為のhtmlタグ %>
     <%= csp_meta_tag %>  <%# 外部からの不正アクセスに対処する為のhtmlタグ %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <div id="top_home">
       <%= link_to parent_tops_path do %>
-        <%= image_tag "home.png"%>
+        <%= image_tag "home.png" %>
       <% end %>
     </div>
     <%= yield %>
     <%= javascript_pack_tag 'form', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   </body>
 </html>

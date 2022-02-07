@@ -3,7 +3,7 @@
   <h1>取り組み</h1>
   <div class="incorporates_show_div">
     <p class="incorporates_show_p">投稿日:</p>
-    <p class="incorporates_show_data"><%= @incorporate.date %></p>
+    <p class="incorporates_show_data"><%= @incorporate.date.strftime("%Y年%m月%d日") %></p>
   </div>
   <div class="incorporates_show_div">
     <p class="incorporates_show_p">タイトル:</p>
@@ -11,11 +11,9 @@
   </div>
   <div class="incorporates_show_contents">
     <p class="incorporates_show_contents_p">内容</p>
-    <p class="incorporates_show_content"><%= @incorporate.content %></p>
+    <div><%= simple_format(@incorporate.content) %></div>
   </div>
   <div class="incorporates_show_images">
     <%= image_tag @incorporate.image_1.url %>
-    <%= image_tag @incorporate.image_2.url %>
-    <%= image_tag @incorporate.image_3.url %>
   </div>
 </div>

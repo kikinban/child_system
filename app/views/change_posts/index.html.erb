@@ -18,7 +18,7 @@
       <% @change_posts.each do |change_post| %>
         <tr>
           <td><%= change_post.created_at.strftime("%Y年%m月%d日") %></td>
-          <td><%= change_post.children_name %></td>
+          <td><%= change_post.change_children_name %></td>
           <td><%= change_post.change_item %></td>
           <td><%= link_to '詳細', change_post %></td>
         </tr>

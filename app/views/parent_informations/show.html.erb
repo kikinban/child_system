@@ -12,11 +12,11 @@
     </div>
     <div>
       <p class="parent_information_show_content_p">内容</p>
-      <p class="parent_information_show_content"><%= @parent_information.content %></p>
+      <div><%= simple_format(@parent_information.content) %></div>
     </div>
     <div id="parent_information_show_image">
       <p class="parent_information_show_content_p">ファイル・画像</p>
-      <p><%= image_tag @parent_information.file_content.url %></p>
+      <div id="parent_information_show_content_image"><%= image_tag @parent_information.file_content.url %></div>
     </div>
   </div>
 </div>

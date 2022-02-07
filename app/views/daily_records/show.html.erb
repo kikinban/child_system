@@ -29,7 +29,15 @@
   <div id="daily_record_condition">
     <h3 class="daily_show_title_h3">体調</h3>
     <p class="daily_record_p">今朝の体温: <%= @parents_notes.temperature %></p>
-    <p class="daily_record_p">体調: <%= @parents_notes.conditon %></p><%#カラム名違う condition%>
+    <p class="daily_record_p">体調:
+      <% if @parents_notes.condition == "true" %>
+        良い
+      <% elsif @parents_notes.condition == "somewhat_bad" %>
+        やや悪い
+      <% else %>
+        悪い
+      <% end %>
+    </p>
   </div>
 
   <%# 体調が悪く、入力した際に表示 if文 %>
@@ -42,7 +50,7 @@
           <% if @parents_notes.snot == "false" && @parents_notes.cough == "false" && 
           @parents_notes.slight_fever == "false" && @parents_notes.diarrhea == "false" &&
           @parents_notes.vomiting == "false" && @parents_notes.anorexia == "false" &&
-          @parents_notes.cold == "false" %>無し
+          @parents_notes.cold == "false" %>無し<% end %>
           <li>
             <% if @parents_notes.snot == "true" %>
               鼻水
@@ -82,7 +90,6 @@
               風邪
             <% end %>
           </li>
-          <% end %>
         </ul>
       </div>
       <div>
@@ -139,12 +146,16 @@
     </div>
   
     <%# ご家庭の様子 %>
+    <div>
     <h3 class="daily_show_title_h3">ご家庭での様子</h3>
-    <p><%= @parents_notes.states %></p>
+    <p class="line_height_p"><%= @parents_notes.states %></p>
+    </div>
 
     <%# 保育者への連絡事項 %>
-    <h3 class="daily_show_title_h3">連絡事項</h3>
-    <p><%= @parents_notes.information %></p>
+    <div id="daily_show_information_p">
+      <h3 class="daily_show_title_h3">連絡事項</h3>
+      <%= simple_format(@parents_notes.information) %>
+    </div>
 
     <%# 降園について %>
     <div>
@@ -170,7 +181,15 @@
     <div class="parent_show_left">
       <h3 class="parent_show_title_h3">体調</h3>
       <p class="parent_record_p">午後の体温: <%= @daily_records.note_temperature %></p>
-      <p class="parent_record_p">体調: <%#= @parents_notes.note_condition %></p>
+      <p class="parent_record_p">体調: 
+        <% if @daily_records.note_condition == "true" %>
+          良い
+        <% elsif @daily_records.note_condition == "somewhat_bad" %>
+          やや悪い
+        <% else %>
+          悪い
+        <% end %>
+      </p>
       <p class="detail_true_p">詳細</p>
       <div class="detail_box">  
         <ul class="detail_box_ul">
@@ -241,9 +260,6 @@
             無し
           <% end %>
           </p>
-          <div>
-            <%#= @parents_notes.note_injury_text %> <%#  カラム名違う  %>
-          </div>
         </div>
       </div>
     </div>
@@ -288,9 +304,9 @@
         </div>
       </div>
       <%# 様子 %>
-      <div>
+      <div id="parents_show_title_states">
         <h3 class="parents_show_title_h3">保育園での様子</h3>
-        <%= @daily_records.states %>
+        <%= simple_format(@daily_records.states) %>
       </div>
       <%# 連絡事項 %>
       <div>

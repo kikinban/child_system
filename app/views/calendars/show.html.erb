@@ -10,8 +10,8 @@
     <%= @calendar.title %>
   </div>
   <div class="calendar_content_show">
-    <p>詳細</p><br>
-    <%= @calendar.content %>
+    <p class="calendar_content_show_p">詳細</p>
+    <div><%= simple_format(@calendar.content) %></div>
   </div>
 </div>
 
