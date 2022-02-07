@@ -1,9 +1,5 @@
 
 
-//= require jquery
-//= require jquery_ujs
-
-const { start } = require("@rails/activestorage");
 
 // --------------------------------------------------------------------
 //                      daily_recordページのフォーム挙動
@@ -178,4 +174,18 @@ $("#parents_note_medicine_yes").click(function(){
 $("#parents_note_medicine_none").click(function(){
   //トグル
   $("#medicine_hidden").slideUp(1500);
+});
+
+
+// -----------------------------------------------------------
+//          parent_noteページの挙動
+// ----------------------------------------------------------
+
+// 競合しないように、対策
+jQuery.noConflict();
+jQuery(function() {
+  $('#class_posts_show_images').slick({
+    dots: true,
+    slidesToShow: 1,
+  });
 });
