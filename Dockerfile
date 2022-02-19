@@ -1,7 +1,7 @@
 FROM ruby:2.6.6
 
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
-    && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+  && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 
 RUN apt-get update -qq && apt-get install -y  nodejs default-mysql-client yarn
 RUN mkdir /myapp
@@ -18,10 +18,10 @@ COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
 
 # 追加 webpacker
+
 RUN rails webpacker:install
 
 # 追加 jquery
 RUN yarn add jquery
-
 ENTRYPOINT ["sh","entrypoint.sh"]
 EXPOSE 3000
