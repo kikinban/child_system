@@ -181,6 +181,8 @@ $("#parents_note_medicine_none").click(function(){
 //          parent_noteページの挙動
 // ----------------------------------------------------------
 
+// イメージ画像をボタンで遷移出来るようにした(一つずつの表示)
+
 // 競合しないように、対策
 jQuery.noConflict();
 jQuery(function() {
