@@ -64,6 +64,9 @@ Rails.application.configure do
   #cssをロードさせる為のコード（追加）
   config.assets.digest = false
 
+  #DNSリバインディングが出た為、追加
+  config.hosts << "child-system.km-portforio.com"
+
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
 
