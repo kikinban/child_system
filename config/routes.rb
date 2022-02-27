@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :parent_tops
   resources :class_posts
   resources :stampings
-  root to: :parent_tops
+  root to: "parent_top#index"
   resources :calendars
   resources :parents_notes 
   resources :attempts
