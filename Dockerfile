@@ -25,5 +25,9 @@ RUN rails webpacker:install
 
 # 追加 jquery
 RUN yarn add jquery
+
+# 追加 slick
+RUN yarn add slick-carousel
+
 ENTRYPOINT ["sh","entrypoint.sh"]
 EXPOSE 3000

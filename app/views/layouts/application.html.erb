@@ -6,6 +6,8 @@
     <%= csrf_meta_tags %> <%# 外部からの不正アクセスに対処する為のhtmlタグ %>
     <%= csp_meta_tag %>  <%# 外部からの不正アクセスに対処する為のhtmlタグ %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+ 
   </head>
 
   <body>
@@ -15,15 +17,15 @@
       <% end %>
     </div>
     <%= yield %>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-    <%= javascript_pack_tag 'form', 'data-turbolinks-track': 'reload' %>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
 
     <footer>
       <%= link_to 'トップへ戻る', parent_tops_path , id: :footer_links %>
     </footer>
-    
+
+    <%= javascript_pack_tag 'form' %>
+
   </body>
+
 
 </html>

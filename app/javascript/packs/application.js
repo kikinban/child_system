@@ -7,4 +7,11 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-require('jquery')
+var $ = require( "jquery" )
+require('slick-carousel')
+import "slick-carousel/slick/slick.scss"
+import "slick-carousel/slick/slick-theme.scss"
+
+document.addEventListener("turbolinks:load", function() {
+  $('.slider').slick()
+})

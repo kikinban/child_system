@@ -1,10 +1,7 @@
 
-
-
 // --------------------------------------------------------------------
 //                      daily_recordページのフォーム挙動
 // --------------------------------------------------------------------
-
 
 // ---------------- 体調ボタンのやや悪い・悪いクリック時の挙動 -----------------
 
@@ -84,8 +81,12 @@ $("#daily_record_note_noon_snack_complete").click(function(){
 // --------------------------------------------------------------
 
 // ------------- サンプル画像から選択した画像をプレビュー画面として表示 ---------
+
+
 // プレビュー1
-$(function() {
+document.addEventListener("turbolinks:load", function() {
+
+//$(function() {
   function readURL(input) {
       if (input.files && input.files[0]) {
           var reader = new FileReader();
@@ -103,7 +104,9 @@ $(function() {
 });
 
 // プレビュー2
-$(function() {
+document.addEventListener("turbolinks:load", function() {
+
+//$(function() {
   function readURL(input) {
       if (input.files && input.files[0]) {
           var reader = new FileReader();
@@ -121,7 +124,9 @@ $("#class_post_image_2").change(function(){
 });
 
 // プレビュー3
-$(function() {
+//$(function() {
+  document.addEventListener("turbolinks:load", function() {
+
   function readURL(input) {
       if (input.files && input.files[0]) {
       var reader = new FileReader();
@@ -184,10 +189,10 @@ $("#parents_note_medicine_none").click(function(){
 // イメージ画像をボタンで遷移出来るようにした(一つずつの表示)
 
 // 競合しないように、対策
-jQuery.noConflict();
-jQuery(function() {
-  $('#class_posts_show_images').slick({
-    dots: true,
-    slidesToShow: 1,
-  });
-});
+//jQuery.noConflict();
+//jQuery(function() {
+//  $('#class_posts_show_images').slick({
+//    dots: true,
+//    slidesToShow: 1,
+//  });
+//});

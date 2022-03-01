@@ -64,6 +64,3 @@ gem "carrierwave", "~> 1.0"
 # simple_calendarを日本語化する為に追加 2021/1/5
 gem 'rails-i18n', '~> 6.0.0' 
 
-
-gem 'jquery-rails'
-gem 'jquery-turbolinks'
