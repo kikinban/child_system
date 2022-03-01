@@ -43,6 +43,8 @@ h1 {
 }
 
 // ------------------ フッターリンク ---------------------
-footer a {
-	text-decoration: none;
+#footer_links {
+	a {
+		text-decoration: none;
+	}
 }
