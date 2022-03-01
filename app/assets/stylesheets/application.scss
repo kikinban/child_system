@@ -24,6 +24,11 @@ body {
 	color: #333333;
 }
 
+input[type="submit"] {
+	appearance: none;
+	-webkit-appearance: none;
+}
+
 // ------------------------ h1装飾 -------------------------------------
 h1 {
 	text-align: center;
