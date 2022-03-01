@@ -32,6 +32,19 @@
 			margin: 10px 0px;
 		}
 	}
+
+	// 送信ボタン
+	#change_actions {
+		#change_action {
+			margin: 10px 0px;
+			font-weight: bold;
+			width: 100%;
+			background-color: #fce38a;
+			border: solid 3px #fdd955;
+			border-radius: 5px;
+			appearance: none;
+		}
+	}
 }
 
 // ------------------------------------------------------
