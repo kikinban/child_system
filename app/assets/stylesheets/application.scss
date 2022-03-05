@@ -44,6 +44,8 @@ h1 {
 
 // ------------------ フッターリンク ---------------------
 footer {
+	position: absolute;
+	bottom: 0;
 	a {
 		text-decoration: none;
 	}
