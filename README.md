@@ -33,17 +33,17 @@ https://child-system.km-portforio.com/parent_tops
 ・保育者と保護者（管理者）のデータの連携  
 
 ### 注目ページ
-* 保護者ページ・保育者（管理者）ページ２つ用意  
+* 保護者ページ・保育者（管理者）ページ２つ用意    
 https://child-system.km-portforio.com/administrators
 
-* 連絡ノート：新規記録ページ（保育者・保護者は内容が少し違う）
-https://child-system.km-portforio.com/parents_notes  
+* 連絡ノート：新規記録ページ（保育者・保護者は内容が少し違う）  
+https://child-system.km-portforio.com/parents_notes    
 →　ボタンを押すと詳細画面が出てくるアコーディオン機能を取り入れた。
 
-* jQueryを利用して、画像スライド   
+* jQueryを利用して、画像スライド     
 https://child-system.km-portforio.com/class_posts/1  
 
-* カレンダー機能
+* カレンダー機能  
 https://child-system.km-portforio.com/calendars?start_date=2022-03-27  
 
 ### 今後の改善と追加
