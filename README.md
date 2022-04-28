@@ -17,7 +17,7 @@
 * お知らせ・お願い　→　保護者へ伝えたいことを紙面での配布ではなく、ネットでいつでも見ることができる環境。
 
 ## URL
-https://my.km-portforio.com/
+https://child-system.km-portforio.com/parent_tops
 
 ## 説明
 2010年10月から、独学でプログラミングの勉強スタート！
@@ -33,6 +33,9 @@ https://my.km-portforio.com/
 ・保育者と保護者（管理者）のデータの連携  
 
 ### 注目ページ
+* 保護者ページ・保育者（管理者）ページ２つ用意
+https://child-system.km-portforio.com/administrators
+
 * 連絡ノート：新規記録ページ（保育者・保護者は内容が少し違う）
 https://child-system.km-portforio.com/parents_notes
 →　ボタンを押すと詳細画面が出てくるアコーディオン機能を取り入れた。
