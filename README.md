@@ -1,24 +1,15 @@
-# README
+# 初めての作品作り
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+自分が使ってみたい機能を勉強しながら、開発してみた。
+シンプルなデザインにして、機能充実に重きをおいた。
+コードの内容やコメントの記述など、他人が見た時に分かりにくい為、今後リファクタリングしていきたい。
 
-Things you may want to cover:
+使用
 
-* Ruby version
+* Ruby version 2.6.6
+* Ruby on Rails  6
 
-* System dependencies
+* jQuery
 
-* Configuration
+* Database MySQL
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
